@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Grid Layout Responsive Demo</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Cantarell;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            border-radius: 10px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            line-height: 2em;
+            height: 100%;
+        }
+
+        #grid {
+            display: -webkit-grid;
+            display: grid;
+            height: 100%;
+        }
+
+        #title {
+            background-color: #FCC;
+            line-height: 2em;
+        }
+
+        #menu {
+            background-color: #CFC;
+        }
+
+        #main {
+            background-color: #CCF;
+        }
+
+        #footer {
+            background-color: #FFC;
+        }
+
+        @media (orientation: landscape) {
+            #grid {
+                -webkit-grid-template-columns: 200px 1fr;
+                grid-definition-columns: 200px 1fr;
+                grid-template-columns: 200px 1fr;
+                -webkit-grid-template-rows: 100px 1fr auto;
+                grid-definition-rows: 100px 1fr auto;
+                grid-template-rows: 100px 1fr auto;
+            }
+
+            #title {
+                -webkit-grid-column: 1;
+                grid-column: 1;
+                -webkit-grid-row: 1;
+                grid-row: 1;
+            }
+
+            #menu {
+                -webkit-grid-column: 1;
+                grid-column: 1;
+                -webkit-grid-row: 2 / span 2;
+                grid-row: 2 / span 2;
+            }
+
+            #main {
+                -webkit-grid-column: 2;
+                grid-column: 2;
+                -webkit-grid-row: 1 / span 2;
+                grid-row: 1 / span 2;
+            }
+
+            #footer {
+                -webkit-grid-column: 2;
+                grid-column: 2;
+                -webkit-grid-row: 3;
+                grid-row: 3;
+            }
+        }
+
+        @media (orientation: portrait) {
+            #grid {
+                -webkit-grid-template-columns: auto 1fr;
+                grid-definition-columns: auto 1fr;
+                grid-template-columns: auto 1fr;
+                -webkit-grid-template-rows: auto 1fr auto;
+                grid-definition-rows: auto 1fr auto;
+                grid-template-rows: auto 1fr auto;
+            }
+
+            #title {
+                -webkit-grid-column: 1;
+                grid-column: 1;
+                -webkit-grid-row: 1;
+                grid-row: 1;
+            }
+
+            #menu {
+                -webkit-grid-column: 2;
+                grid-column: 2;
+                -webkit-grid-row: 1;
+                grid-row: 1;
+            }
+
+            #main {
+                -webkit-grid-column: 1 / span 2;
+                grid-column: 1 / span 2;
+                -webkit-grid-row: 2;
+                grid-row: 2;
+            }
+
+            #footer {
+                -webkit-grid-column: 1 / span 2;
+                grid-column: 1 / span 2;
+                -webkit-grid-row: 3;
+                grid-row: 3;
+            }
+        }
+
+        #title:hover, #footer:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        var footerChanged = false;
+        function changeFooter() {
+            document.getElementById("footer").innerHTML = footerChanged ? "Footer" : "Footer<br>2 lines";
+
+            footerChanged = !footerChanged;
+        }
+        var titleChanged = false;
+        function changeTitle() {
+            document.getElementById("title").innerHTML = titleChanged ? "Title" : "Longer Title";
+
+            titleChanged = !titleChanged;
+        }
+    </script>
+</head>
+<body>
+    <div id="grid">
+        <div id="title" class="box" onclick="changeTitle();">Title</div>
+        <div id="menu" class="box">Menu</div>
+        <div id="main" class="box">Main</div>
+        <div id="footer" class="box" onclick="changeFooter();">Footer</div>
+    </div>
+</body>
+</html>

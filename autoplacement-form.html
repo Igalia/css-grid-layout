@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Grid Layout Auto-placement Form Demo</title>
+    <style type="text/css">
+        form {
+            display: -webkit-grid;
+            display: grid;
+            -webkit-grid-auto-flow: row;
+            grid-auto-flow: row;
+            background-color: #CCC;
+        }
+
+        label {
+            -webkit-grid-column: 1;
+            grid-column: 1;
+            background-color: #FCC;
+        }
+
+        input {
+            -webkit-grid-column: 2;
+            grid-column: 2;
+            background-color: #CCF;
+        }
+
+        #controls {
+            -webkit-grid-column: 1 / span 2;
+            grid-column: 1 / span 2;
+            background-color: #CFC;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label>Name</label>
+        <input type="text" />
+        <label>Mail</label>
+        <input type="text" />
+        <label>Comments</label>
+        <textarea></textarea>
+        <label>Accept policy</label>
+        <input type="checkbox" />
+        <div id="controls">
+            <button>Accept</button>
+            <button>Cancel</button>
+        </div>
+    </form>
+</body>
+</html>

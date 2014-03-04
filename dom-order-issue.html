@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        .grid {
+            display: -webkit-grid;
+            display: grid;
+            -webkit-grid-template-columns: 50px;
+            grid-template-columns: 50px;
+            -webkit-grid-template-rows: 50px 50px;
+            grid-template-rows: 50px 50px;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+        }
+
+        .grid :nth-child(1) {
+            background-color: #CCC;
+        }
+
+        .grid :nth-child(2) {
+            background-color: #999;
+        }
+
+        .grid :nth-child(3) {
+            background-color: #333;
+        }
+
+        .firstRowFirstColumn {
+            -webkit-grid-column: 1;
+            grid-column: 1;
+            -webkit-grid-row: 1;
+            grid-row: 1;
+        }
+
+        .secondRowFirstColumn {
+            -webkit-grid-column: 1;
+            grid-column: 1;
+            -webkit-grid-row: 2;
+            grid-row: 2;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .firstSecondRowsFirstColumn {
+            -webkit-grid-column: 1;
+            grid-column: 1;
+            -webkit-grid-row: 1 / span 2;
+            grid-row: 1 / span 2;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        hr {
+            margin-top: 75px;
+        }
+    </style>
+</head>
+<body>
+    <div>Grid items should be painted from lighter to darker according to DOM ordering.</div>
+    <hr style="margin-top: 10px;">
+    <div class="grid">
+        <div class="item firstRowFirstColumn"></div>
+        <div class="item secondRowFirstColumn"></div>
+        <div class="item firstSecondRowsFirstColumn"></div>
+    </div>
+    <hr>
+    <div class="grid">
+        <div class="item secondRowFirstColumn"></div>
+        <div class="item firstSecondRowsFirstColumn"></div>
+        <div class="item firstRowFirstColumn"></div>
+    </div>
+    <hr>
+    <div class="grid">
+        <div class="item firstSecondRowsFirstColumn"></div>
+        <div class="item firstRowFirstColumn"></div>
+        <div class="item secondRowFirstColumn"></div>
+    </div>
+    <hr>
+    <div class="grid">
+        <div class="item secondRowFirstColumn"></div>
+        <div class="item firstRowFirstColumn"></div>
+        <div class="item firstSecondRowsFirstColumn"></div>
+    </div>
+    <hr>
+    <div class="grid">
+        <div class="item firstRowFirstColumn"></div>
+        <div class="item firstSecondRowsFirstColumn"></div>
+        <div class="item secondRowFirstColumn"></div>
+    </div>
+    <hr>
+    <div class="grid">
+        <div class="item firstSecondRowsFirstColumn"></div>
+        <div class="item secondRowFirstColumn"></div>
+        <div class="item firstRowFirstColumn"></div>
+    </div>
+</body>
+</html>

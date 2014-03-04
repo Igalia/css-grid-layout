@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        .grid {
+            display: -webkit-grid;
+            display: grid;
+            -webkit-grid-template-areas: "a b c"
+                                         "d d d"
+                                         "e . .";
+            grid-template-areas: "a b c"
+                                 "d d d"
+                                 "e . .";
+            font-size: 3em;
+        }
+
+        #itema {
+            -webkit-grid-area: a;
+            grid-area: a;
+            background-color: #FCC;
+        }
+
+        #itemb {
+            -webkit-grid-area: b;
+            grid-area: b;
+            background-color: #CFC;
+        }
+
+        #itemc {
+            -webkit-grid-area: c;
+            grid-area: c;
+            background-color: #CCF;
+        }
+
+        #itemd {
+            -webkit-grid-area: d;
+            grid-area: d;
+            background-color: #FFC;
+        }
+
+        #iteme {
+            -webkit-grid-area: e;
+            grid-area: e;
+            background-color: #CFF;
+        }
+    </style>
+</head>
+<body>
+    <div>"item d" is painted 3 times while the rest of the items are painted once.</div>
+    <hr>
+    <div class="grid">
+        <div id="itema">item a</div>
+        <div id="itemb">item b</div>
+        <div id="itemc">item c</div>
+        <div id="itemd">item d</div>
+        <div id="iteme">item e</div>
+    </div>
+</body>
+</html>

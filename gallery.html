@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Grid Layout Gallery Demo</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            background-color: #111;
+            color: #EEE;
+        }
+
+        * {
+            margin: 0;
+            border: 0;
+        }
+
+        #grid {
+            display: -webkit-grid;
+            display: grid;
+            height: 100%;
+        }
+
+        @media (orientation: landscape) {
+            #grid {
+                -webkit-grid-template-columns: 20px 1fr 10px 300px 20px;
+                grid-definition-columns: 20px 1fr 10px 300px 20px;
+                grid-template-columns: 20px 1fr 10px 300px 20px;
+                -webkit-grid-template-rows: 20px 150px 10px 1fr 10px 150px 20px;
+                grid-definition-rows: 20px 150px 10px 1fr 10px 150px 20px;
+                grid-template-rows: 20px 150px 10px 1fr 10px 150px 20px;
+            }
+
+            #title {
+                -webkit-grid-column: 4;
+                grid-column: 4;
+                -webkit-grid-row: 2;
+                grid-row: 2;
+            }
+
+            #text {
+                -webkit-grid-column: 4;
+                grid-column: 4;
+                -webkit-grid-row: 4;
+                grid-row: 4;
+            }
+
+            #main {
+                -webkit-grid-column: 2;
+                grid-column: 2;
+                -webkit-grid-row: 2 / span 3;
+                grid-row: 2 / span 3;
+            }
+
+            #photos {
+                -webkit-grid-column: 2 / span 3;
+                grid-column: 2 / span 3;
+                -webkit-grid-row: 6;
+                grid-row: 6;
+            }
+
+            #image-title {
+                line-height: 1.5em;
+                font-size: 2em;
+            }
+
+            #text {
+                font-size: 1em;
+                padding: 20px;
+            }
+
+            #description {
+                font-size: 1.5em;
+                line-height: 1.3em;
+                margin-bottom: 30px;
+            }
+
+            #thumbnails {
+                max-height: 150px;
+            }
+
+            .thumbnail {
+                max-height: 130px;
+                margin: 10px 30px 10px 30px;
+            }
+        }
+
+        @media (orientation: portrait) {
+            #grid {
+                -webkit-grid-template-columns: 20px 200px 10px 1fr 20px;
+                grid-definition-columns: 20px 200px 10px 1fr 20px;
+                grid-template-columns: 20px 200px 10px 1fr 20px;
+                -webkit-grid-template-rows: 20px 100px 10px 1fr 10px 100px 20px;
+                grid-definition-rows: 20px 100px 10px 1fr 10px 100px 20px;
+                grid-template-rows: 20px 100px 10px 1fr 10px 100px 20px;
+            }
+
+            #title {
+                -webkit-grid-column: 2;
+                grid-column: 2;
+                -webkit-grid-row: 2;
+                grid-row: 2;
+            }
+
+            #text {
+                -webkit-grid-column: 4;
+                grid-column: 4;
+                -webkit-grid-row: 2;
+                grid-row: 2;
+            }
+
+            #main {
+                -webkit-grid-column: 2 / span 3;
+                grid-column: 2 / span 3;
+                -webkit-grid-row: 4;
+                grid-row: 4;
+            }
+
+            #photos {
+                -webkit-grid-column: 2 /span 3;
+                grid-column: 2 /span 3;
+                -webkit-grid-row: 6;
+                grid-row: 6;
+            }
+
+            #image-title {
+                line-height: 1.5em;
+                font-size: 2em;
+            }
+
+            #text {
+                font-size: 1em;
+                padding: 10px;
+            }
+
+            #description {
+                font-size: 1.2em;
+                line-height: 1.1em;
+                margin-bottom: 10px;
+            }
+
+            #thumbnails {
+                max-height: 100px;
+            }
+
+            .thumbnail {
+                max-height: 80px;
+                margin: 10px 10px 5px 10px;
+            }
+        }
+
+        .vcenter {
+            display: -webkit-box !important;
+            display: box !important;
+            -webkit-box-orient: vertical;
+            box-orient: vertical;
+            -webkit-box-align: center;
+            box-align: center;
+            -webkit-box-pack: center;
+            box-pack: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        #image {
+            max-width: 90%;
+            max-height: 90%;
+            padding: 5px;
+            border: 15px solid white;
+        }
+
+        #photos {
+            background-color: #CCC;
+            box-shadow: 5px 5px 3px #666;
+            border-radius: 5px;
+        }
+
+        #thumbnails {
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .thumbnail {
+            box-shadow: 5px 5px 3px #CCC;
+            border-radius: 3px;
+            border: 1px solid #111;
+        }
+
+        .thumbnail:hover {
+            border: 1px solid white;
+        }
+
+        #image-title {
+            font-family: Impact, fantasy;
+            text-align: center;
+        }
+
+        #text {
+            font-family: Verdana, sans-serif;
+            color: #000;
+            background-color: #CCC;
+            box-shadow: 5px 5px 3px #666;
+            border-radius: 5px;
+        }
+
+        a {
+            color: #633;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        var images = {
+            "8755627802": {
+                "title": "Lakes close to Ljubljana",
+                "description": "Incredible water in Ljubljana, Slovenia.",
+                "img": "http://farm3.staticflickr.com/2807/8755627802_727863f09e_b.jpg"
+            },
+            "8899898917": {
+                "title": "Balloons in Cappadocia",
+                "description": "Balloon flight in Cappadocia, Turkey.",
+                "img": "http://farm6.staticflickr.com/5458/8899898917_fee4ba1613_b.jpg"
+            },
+            "9045535798": {
+                "title": "Lucía in the Steppe",
+                "description": "My motorcycle in the side of the road at some point between the Russian border and Atyrau, Kazakhstan.",
+                "img": "http://farm6.staticflickr.com/5459/9045535798_f3d21b27a1_b.jpg"
+            },
+            "9281765203": {
+                "title": "Charyn Canyon",
+                "description": "Charyn Canyon, Kazakhstan.",
+                "img": "http://farm3.staticflickr.com/2847/9281765203_d6af908f9f_b.jpg"
+            },
+            "9476752141": {
+                "title": "Uran Togoo",
+                "description": "Road to Uran Togoo, Mongolia.",
+                "img": "http://farm8.staticflickr.com/7301/9476752141_969cc26a71_b.jpg"
+            },
+            "10139131563": {
+                "title": "Vancouver Graffiti",
+                "description": "Graffiti in Vancouver. Canada.",
+                "img": "http://farm8.staticflickr.com/7379/10139131563_3ddd73c6d4_b.jpg"
+            },
+            "10138806215": {
+                "title": "Kinkakuji",
+                "description": "Kinkakuji, Kyoto. Japan.",
+                "img": "http://farm8.staticflickr.com/7365/10138806215_e25e389de3_b.jpg"
+            }
+        };
+
+        function loadImage(id) {
+            document.getElementById("image").src = images[id].img;
+            document.getElementById("image-title").innerHTML = images[id].title;
+            document.getElementById("description").innerHTML = images[id].description;
+            document.getElementById("source").href = "http://www.flickr.com/photos/teosaurio/" + id;
+        }
+    </script>
+</head>
+<body onload="loadImage(8899898917)";>
+    <div id="grid">
+        <div id="title">
+            <h1 id="image-title"></h1>
+        </div>
+        <div id="text">
+            <p id="description"></p>
+            <p>By <a id="source" href="#">Mr Hicks46</a>.</p>
+        </div>
+        <div id="main" class="vcenter">
+            <img id="image" src="img/8899898917.jpg">
+        </div>
+        <div id="photos">
+            <div id="thumbnails">
+                <a href="#" onclick="loadImage(8755627802);"><img id="thumb1" class="thumbnail" src="img/8755627802.jpg"></a>
+                <a href="#" onclick="loadImage(8899898917);"><img id="thumb2" class="thumbnail" src="img/8899898917.jpg"></a>
+                <a href="#" onclick="loadImage(9045535798);"><img id="thumb3" class="thumbnail" src="img/9045535798.jpg"></a>
+                <a href="#" onclick="loadImage(9281765203);"><img id="thumb4" class="thumbnail" src="img/9281765203.jpg"></a>
+                <a href="#" onclick="loadImage(9476752141);"><img id="thumb5" class="thumbnail" src="img/9476752141.jpg"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

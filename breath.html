@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        #grid {
+            display: -webkit-grid;
+            display: grid;
+            -webkit-grid-definition-columns: 200px 1fr 200px;
+            -webkit-grid-template-columns: 200px 1fr 200px;
+            grid-definition-columns: 200px 1fr 200px;
+            grid-template-columns: 200px 1fr 200px;
+            background-color: #CCC;
+        }
+
+        #first {
+            -webkit-grid-column: 1;
+            grid-column: 1;
+            background-color: #FCC;
+        }
+
+        #middle {
+            -webkit-grid-column: 2;
+            grid-column: 2;
+            background-color: #CFC;
+        }
+
+        #last {
+            -webkit-grid-column: 3;
+            grid-column: 3;
+            background-color: #CCF;
+        }
+    </style>
+</head>
+<body>
+    <div id="grid">
+      <div id="first">FIRTS 200px</div>
+      <div id="middle">MIDDLE 1fr</div>
+      <div id="last">MIDDLE 200px</div>
+    </div>
+</body>
+</html>

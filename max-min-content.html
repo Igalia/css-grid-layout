@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        #grid-max-columns {
+            display: -webkit-grid;
+            display: grid;
+            -webkit-grid-definition-columns: max-content;
+            -webkit-grid-template-columns: max-content;
+            grid-definition-columns: max-content;
+            grid-template-columns: max-content;
+            -webkit-grid-definition-rows: auto auto;
+            -webkit-grid-template-rows: auto auto;
+            grid-definition-rows: auto auto;
+            grid-template-rows: auto auto;
+            background-color: #CCC;
+        }
+
+        #grid-min-columns {
+            display: -webkit-grid;
+            display: grid;
+            -webkit-grid-definition-columns: min-content;
+            -webkit-grid-template-columns: min-content;
+            grid-definition-columns: min-content;
+            grid-template-columns: min-content;
+            -webkit-grid-definition-rows: auto auto;
+            -webkit-grid-template-rows: auto auto;
+            grid-definition-rows: auto auto;
+            grid-template-rows: auto auto;
+            background-color: #CCC;
+        }
+
+        .firstRowFirstColumn {
+            -webkit-grid-column: 1;
+            grid-column: 1;
+            -webkit-grid-row: 1;
+            grid-row: 1;
+            background-color: #FCC;
+        }
+
+        .secondRowFirstColumn {
+            -webkit-grid-column: 1;
+            grid-column: 1;
+            -webkit-grid-row: 2;
+            grid-row: 2;
+            background-color: #CFC;
+        }
+    </style>
+</head>
+<body>
+    <h1>max-content columns</h1>
+    <div id="grid-max-columns">
+        <div class="firstRowFirstColumn">row1 XXXXX XXXXXXX</div>
+        <div class="secondRowFirstColumn">row2 XX XX XX XX XX XX XX XX</div>
+    </div>
+
+    <h1>min-content columns</h1>
+    <div id="grid-min-columns">
+        <div class="firstRowFirstColumn">row1 XXXXX XXXXXXX</div>
+        <div class="secondRowFirstColumn">row2 XX XX XX XX XX XX XX XX</div>
+    </div>
+</body>
+</html>

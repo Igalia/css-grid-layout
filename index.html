@@ -4,17 +4,40 @@
         <meta charset="utf-8">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-        <title>CSS Grid Layout Examples Repository</title>
+        <title>CSS Grid Layout Examples - Home</title>
     </head>
-    <body>
-        <a href="https://github.com/Igalia/css-grid-layout/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+    <body style="padding-top: 50px;">
+        <a href="https://github.com/Igalia/css-grid-layout/"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 1050;" src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 
-        <div class="container">
-            <div class="jumbotron">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">CSS Grid Layout Examples</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="enable.html">Enable</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <div class="container">
                 <h1>CSS Grid Layout Examples</h1>
                 <p>Several examples showing different CSS Grid Layout use cases.</p>
             </div>
+        </div>
 
+        <div class="container">
             <div class="row">
                 <div class="col-md-4">
                     <div class="panel panel-default">
@@ -46,7 +69,6 @@
                             </tr>
                         </table>
                     </div>
-                    </ul>
                 </div>
                 <div class="col-md-4">
                     <div class="panel panel-default">
@@ -81,8 +103,8 @@
                                     <a href="http://www.w3.org/TR/css-grid/#valuedef-max-content" class="label label-info">spec</a>
                                     <a href="max-min-content.html" class="label label-success">example</a>
                                 </div>
-                                <h4 class="list-group-item-heading">max-content and min-content</h4>
-                                <p>Example to show behavior of max-content and min-content in columns.</p>
+                                <h4 class="list-group-item-heading"><tt>max-content</tt> and <tt>min-content</tt></h4>
+                                <p>Example to show behavior of <tt>max-content</tt> and <tt>min-content</tt> in columns.</p>
                             </li>
                             <li class="list-group-item">
                                 <div class="pull-right">
@@ -124,6 +146,7 @@
                 </div>
 
                 <div class="col-md-4">
+                    <div class="alert alert-warning">Check <a href="enable.html">how to enable CSS Grid Layout in different browsers</a>.</div>
                     <div class="panel panel-default">
                         <div class="panel-heading"><h3>Demos</h3></div>
                         <ul class="list-group">

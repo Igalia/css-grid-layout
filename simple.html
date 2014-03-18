@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="css/grid.css" rel="stylesheet">
     <style type="text/css">
         .grid {
-            display: -ms-grid;
-            display: -webkit-grid;
-            display: grid;
             -ms-grid-columns: 100px 100px;
             -webkit-grid-definition-columns: 100px 100px;
             -webkit-grid-template-columns: 100px 100px;
@@ -16,56 +14,15 @@
             -webkit-grid-template-rows: 50px 50px;
             grid-definition-rows: 50px 50px;
             grid-template-rows: 50px 50px;
-            background-color: #CCC;
-        }
-
-        .firstRowFirstColumn {
-            -ms-grid-column: 1;
-            -webkit-grid-column: 1;
-            grid-column: 1;
-            -ms-grid-row: 1;
-            -webkit-grid-row: 1;
-            grid-row: 1;
-            background-color: #FCC;
-        }
-
-        .firstRowSecondColumn {
-            -ms-grid-column: 2;
-            -webkit-grid-column: 2;
-            grid-column: 2;
-            -ms-grid-row: 1;
-            -webkit-grid-row: 1;
-            grid-row: 1;
-            background-color: #CFC;
-        }
-
-        .secondRowFirstColumn {
-            -ms-grid-column: 1;
-            -webkit-grid-column: 1;
-            grid-column: 1;
-            -ms-grid-row: 2;
-            -webkit-grid-row: 2;
-            grid-row: 2;
-            background-color: #CCF;
-        }
-
-        .secondRowSecondColumn {
-            -ms-grid-column: 2;
-            -webkit-grid-column: 2;
-            grid-column: 2;
-            -ms-grid-row: 2;
-            -webkit-grid-row: 2;
-            grid-row: 2;
-            background-color: #FCF;
         }
     </style>
 </head>
 <body>
     <div class="grid">
-        <div class="firstRowFirstColumn">item 1</div>
-        <div class="firstRowSecondColumn">item 2</div>
-        <div class="secondRowFirstColumn">item 3</div>
-        <div class="secondRowSecondColumn">item 4</div>
+        <div class="row1-column1">item 1</div>
+        <div class="row1-column2">item 2</div>
+        <div class="row2-column1">item 3</div>
+        <div class="row2-column2">item 4</div>
     </div>
 </body>
 </html>

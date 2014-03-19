@@ -4,26 +4,30 @@
     <title>CSS Grid Layout Auto-placement Form Demo</title>
     <style type="text/css">
         form {
+            display: -ms-grid;
             display: -webkit-grid;
             display: grid;
             -webkit-grid-auto-flow: row;
             grid-auto-flow: row;
-            background-color: #CCC;
+            background-color: #DDD;
         }
 
         label {
+            -ms-grid-column: 1;
             -webkit-grid-column: 1;
             grid-column: 1;
             background-color: #FCC;
         }
 
         input {
+            -ms-grid-column: 2;
             -webkit-grid-column: 2;
             grid-column: 2;
             background-color: #CCF;
         }
 
         #controls {
+            -ms-grid-column: 1 / span 2;
             -webkit-grid-column: 1 / span 2;
             grid-column: 1 / span 2;
             background-color: #CFC;

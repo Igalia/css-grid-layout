@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/grid.css" rel="stylesheet">
+    <style>
+        .grid {
+            -ms-grid-columns: 100px 100px;
+            -webkit-grid-definition-columns: 100px 100px;
+            -webkit-grid-template-columns: 100px 100px;
+            grid-definition-columns: 100px 100px;
+            grid-template-columns: 100px 100px;
+            -ms-grid-rows: 100px 100px;
+            -webkit-grid-definition-rows: 100px 100px;
+            -webkit-grid-template-rows: 100px 100px;
+            grid-definition-rows: 100px 100px;
+            grid-template-rows: 100px 100px;
+        }
+
+        #A {
+            grid-column: 1 / span 2;
+            -webkit-grid-column: 1 / span 2;
+            grid-row: 2;
+            -webkit-grid-row: 2;
+            width: 200px;
+            height: 75px;
+            margin-top: 25px;
+        }
+
+        #B {
+            grid-column: 1;
+            -webkit-grid-column: 1;
+            grid-row: 1;
+            -webkit-grid-row: 1;
+            z-index: 10;
+        }
+
+        #C {
+            grid-column: 2;
+            -webkit-grid-column: 2;
+            grid-row: 1;
+            -webkit-grid-row: 1;
+            margin-left: -25px;
+            height: 75px;
+            width: 125px;
+        }
+
+        #D {
+            grid-column: 2;
+            -webkit-grid-column: 2;
+            grid-row: 2;
+            -webkit-grid-row: 2;
+            height: 75px;
+            width: 75px;
+            margin-left: 25px;
+        }
+
+        #E {
+            grid-column: 1 / span 2;
+            -webkit-grid-column: 1 / span 2;
+            grid-row: 1 / span 2;
+            -webkit-grid-row: 1 / span 2;
+            z-index: 5;
+            height: 100px;
+            width: 100px;
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div id="A">A</div>
+        <div id="B">B</div>
+        <div id="C">C</div>
+        <div id="D">D</div>
+        <div id="E">E</div>
+    </div>
+</body>
+</html>

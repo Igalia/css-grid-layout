@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/grid.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid {
+            margin: 50px;
+            float: left;
+            -ms-grid-columns: 150px 150px 150px;
+            -webkit-grid-definition-columns: 150px 150px 150px;
+            -webkit-grid-template-columns: 150px 150px 150px;
+            grid-definition-columns: 150px 150px 150px;
+            grid-template-columns: 150px 150px 150px;
+            -ms-grid-rows: 75px 75px 75px;
+            -webkit-grid-definition-rows: 75px 75px 75px;
+            -webkit-grid-template-rows: 75px 75px 75px;
+            grid-definition-rows: 75px 75px 75px;
+            grid-template-rows: 75px 75px 75px;
+            -webkit-grid-auto-flow: row;
+            grid-auto-flow: row;
+            -grid-auto-columns: 150px;
+            grid-auto-columns: 150px;
+            -grid-auto-rows: 75px;
+            grid-auto-rows: 75px;
+        }
+
+        #table {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            border-collapse: collapse;
+            width: 450px;
+            height: 225px;
+        }
+
+        #table tr {
+            height: 75px;
+        }
+
+        #table td {
+            border: 2px dashed grey;
+            width: 150px;
+        }
+
+        #new {
+            padding-left: 25px;
+        }
+    </style>
+    <script>
+        function randomColor() {
+            return "#" + Math.floor(Math.random() * 16777215).toString(16);
+        }
+
+        function addGridItem() {
+            var grid = document.getElementById("grid");
+            var row = document.getElementById("row");
+            var rowspan = document.getElementById("rowspan");
+            var column = document.getElementById("column");
+            var columnspan = document.getElementById("columnspan");
+
+            var item = document.createElement("div");
+            item.style.gridRow = row.value + " / span " + rowspan.value;
+            item.style.gridColumn = column.value + " / span " + columnspan.value;
+            item.style.backgroundColor = randomColor();
+
+            item.innerHTML = "<pre> grid-row:\n   " + item.style.gridRowStart + " / " + item.style.gridRowEnd +
+                "\n grid-column:\n   " + item.style.gridColumnStart + " / " + item.style.gridColumnEnd + "</pre>";
+
+            grid.appendChild(item);
+        }
+
+        function addRandomGridItem() {
+            var row = document.getElementById("row");
+            var rowspan = document.getElementById("rowspan");
+            var column = document.getElementById("column");
+            var columnspan = document.getElementById("columnspan");
+
+            row.selectedIndex = Math.floor(Math.random() * 4);
+            rowspan.selectedIndex = Math.floor(Math.random() * 3);
+            column.selectedIndex = Math.floor(Math.random() * 4);
+            columnspan.selectedIndex = Math.floor(Math.random() * 3);
+
+            addGridItem();
+        }
+    </script>
+</head>
+<body>
+    <div id="grid" class="grid">
+    </div>
+    <div style="clear: both;"></div>
+    <div id="new">
+        <h2>CSS Grid Layout Auto-placement Algorithm</h2>
+        <p>New grid item at
+        row
+        <select id="row">
+            <option value="auto" selected>auto</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        spanning
+        <select id="rowspan">
+            <option value="1" selected>1 row</option>
+            <option value="2">2 rows</option>
+            <option value="3">3 rows</option>
+        </select>
+        and column
+        <select id="column">
+            <option value="auto" selected>auto</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        spanning
+        <select id="columnspan">
+            <option value="1" selected>1 column</option>
+            <option value="2">2 columns</option>
+            <option value="3">3 columns</option>
+        </select>
+        </p>
+        <button onClick="addGridItem();">Add</button>
+        <button onClick="addRandomGridItem();">Add random</button>
+        <p><a href="http://www.w3.org/TR/css-grid-1/#auto-placement">Spec</a></p>
+    </div>
+    <table id="table">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

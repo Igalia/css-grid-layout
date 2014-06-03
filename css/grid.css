@@ -10,51 +10,51 @@
     height: 100%;
 }
 
-.grid :nth-child(1) {
+.grid > :nth-child(1) {
     background-color: #FCC;
 }
 
-.grid :nth-child(2) {
+.grid > :nth-child(2) {
     background-color: #CFC;
 }
 
-.grid :nth-child(3) {
+.grid > :nth-child(3) {
     background-color: #CCF;
 }
 
-.grid :nth-child(4) {
+.grid > :nth-child(4) {
     background-color: #C99;
 }
 
-.grid :nth-child(5) {
+.grid > :nth-child(5) {
     background-color: #9C9;
 }
 
-.grid :nth-child(6) {
+.grid > :nth-child(6) {
     background-color: #99C;
 }
 
-.grid :nth-child(7) {
+.grid > :nth-child(7) {
     background-color: #FFC;
 }
 
-.grid :nth-child(8) {
+.grid > :nth-child(8) {
     background-color: #FCF;
 }
 
-.grid :nth-child(9) {
+.grid > :nth-child(9) {
     background-color: #CFF;
 }
 
-.grid :nth-child(10) {
+.grid > :nth-child(10) {
     background-color: #CC9;
 }
 
-.grid :nth-child(11) {
+.grid > :nth-child(11) {
     background-color: #C9C;
 }
 
-.grid :nth-child(12) {
+.grid > :nth-child(12) {
     background-color: #9CC;
 }
 

@@ -4,9 +4,16 @@
     <link href="css/grid.css" rel="stylesheet">
     <style>
         .grid {
-            grid-auto-flow: row;
-            grid-auto-rows: 50px;
-            grid-auto-columns: 100px;
+            -ms-grid-columns: 100px 100px;
+            -webkit-grid-definition-columns: 100px 100px;
+            -webkit-grid-template-columns: 100px 100px;
+            grid-definition-columns: 100px 100px;
+            grid-template-columns: 100px 100px;
+            -ms-grid-rows: 50px 50px;
+            -webkit-grid-definition-rows: 50px 50px;
+            -webkit-grid-template-rows: 50px 50px;
+            grid-definition-rows: 50px 50px;
+            grid-template-rows: 50px 50px;
         }
     </style>
 </head>
@@ -14,11 +21,8 @@
     <div class="grid">
         <div class="row1-column1">item 1</div>
         <div class="row1-column2">item 2</div>
-        <div>auto1</div>
-        <div>auto2</div>
-        <div>auto3</div>
-        <div>auto4</div>
-        <div class="row1-columnauto">row1</div>
+        <div class="row2-column1">item 3</div>
+        <div class="row2-column2">item 4</div>
     </div>
 </body>
 </html>

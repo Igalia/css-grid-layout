@@ -65,12 +65,16 @@
             var columnspan = document.getElementById("columnspan");
 
             var item = document.createElement("div");
+            item.style.msGridRow = row.value + " / span " + rowspan.value;
+            item.style.webkitGridRow = row.value + " / span " + rowspan.value;
             item.style.gridRow = row.value + " / span " + rowspan.value;
+            item.style.msGridColumn = column.value + " / span " + columnspan.value;
+            item.style.webkitGridColumn = column.value + " / span " + columnspan.value;
             item.style.gridColumn = column.value + " / span " + columnspan.value;
             item.style.backgroundColor = randomColor();
 
-            item.innerHTML = "<pre> grid-row:\n   " + item.style.gridRowStart + " / " + item.style.gridRowEnd +
-                "\n grid-column:\n   " + item.style.gridColumnStart + " / " + item.style.gridColumnEnd + "</pre>";
+            item.innerHTML = "<pre> grid-row:\n   " + row.value + " / span " + rowspan.value +
+                "\n grid-column:\n   " + column.value + " / span " + columnspan.value + "</pre>";
 
             grid.appendChild(item);
         }
@@ -81,10 +85,10 @@
             var column = document.getElementById("column");
             var columnspan = document.getElementById("columnspan");
 
-            row.selectedIndex = Math.floor(Math.random() * 4);
-            rowspan.selectedIndex = Math.floor(Math.random() * 3);
-            column.selectedIndex = Math.floor(Math.random() * 4);
-            columnspan.selectedIndex = Math.floor(Math.random() * 3);
+            row.selectedIndex = Math.floor(Math.random() * row.options.length);
+            rowspan.selectedIndex = Math.floor(Math.random() * rowspan.options.length);
+            column.selectedIndex = Math.floor(Math.random() * column.options.length);
+            columnspan.selectedIndex = Math.floor(Math.random() * columnspan.options.length);
 
             addGridItem();
         }

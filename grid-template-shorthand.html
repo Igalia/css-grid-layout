@@ -1,87 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
+  <link href="css/grid.css" rel="stylesheet">
+  <style>
 
+    .grid {
+        grid-template: 25px 260px 702px 1fr /
+            "top-panel    top-panel    top-panel    top-panel"     32px
+            "top-subpanel top-subpanel top-subpanel top-subpanel"  25px
+            "left-panel   widget-1     widget-2     widget-4"     229px
+            "left-panel   widget-1     widget-2     widget-5"     264px
+            "left-panel   widget-1     widget-3     widget-6"     260px;
+        -ms-grid-template: 25px 260px 702px 1fr /
+            "top-panel    top-panel    top-panel    top-panel"     32px
+            "top-subpanel top-subpanel top-subpanel top-subpanel"  25px
+            "left-panel   widget-1     widget-2     widget-4"     229px
+            "left-panel   widget-1     widget-2     widget-5"     264px
+            "left-panel   widget-1     widget-3     widget-6"     260px;
+        -webkit-grid-template: 25px 260px 702px 1fr /
+            "top-panel    top-panel    top-panel    top-panel"     32px
+            "top-subpanel top-subpanel top-subpanel top-subpanel"  25px
+            "left-panel   widget-1     widget-2     widget-4"     229px
+            "left-panel   widget-1     widget-2     widget-5"     264px
+            "left-panel   widget-1     widget-3     widget-6"     260px;
+    }
 
-.grid {
-    display: grid;
-    grid-template: 25px 260px 702px 538px /
-         "top-panel    top-panel    top-panel    top-panel"     32px
-         "top-subpanel top-subpanel top-subpanel top-subpanel"  25px
-         "left-panel   widget-1     widget-2     widget-4"   229px
-         "left-panel   widget-1     widget-2     widget-5"   264px
-         "left-panel   widget-1     widget-3     widget-6"   260px;
-}
+    #topPanel {
+        grid-area: top-panel;
+        -ms-grid-area: top-panel;
+        -webkit-grid-area: top-panel;
+    }
 
-.sizedToGridArea {
-    font: 10px/1 Ahem;
-    /* Make us fit our grid area. */
-    width: 100%;
-    height: 100%;
-}
+    #topSubpanel {
+        grid-area: top-subpanel;
+        -ms-grid-area: top-subpanel;
+        -webkit-grid-area: top-subpanel;
+    }
 
-#topPanel {
-   grid-area: top-panel;
-   background-color: blue;
-}
+    #leftPanel {
+       grid-area: left-panel;
+       -ms-grid-area: left-panel;
+       -webkit-grid-area: left-panel;
+    }
 
-#topSubpanel {
-   grid-area: top-subpanel;
-   background-color: lime;
-}
+    #widget1 {
+       grid-area: widget-1;
+       -ms-grid-area: widget-1;
+       -webkit-grid-area: widget-1;
+    }
 
-#leftPanel {
-   grid-area: left-panel;
-   background-color: purple;
-}
+    #widget2 {
+       grid-area: widget-2;
+       -ms-grid-area: widget-2;
+       -webkit-grid-area: widget-2;
+    }
 
-#widget1 {
-   grid-area: widget-1;
-   background-color: orange;
-}
+    #widget3 {
+       grid-area: widget-3;
+       -ms-grid-area: widget-3;
+       -webkit-grid-area: widget-3;
+    }
 
-#widget2 {
-   grid-area: widget-2;
-   background-color: pink;
-}
+    #widget4 {
+       grid-area: widget-4;
+       -ms-grid-area: widget-4;
+       -webkit-grid-area: widget-4;
+    }
 
-#widget3 {
-   grid-area: widget-3;
-   background-color: navy;
-}
+    #widget5 {
+       grid-area: widget-5;
+       -ms-grid-area: widget-5;
+       -webkit-grid-area: widget-5;
+    }
 
-#widget4 {
-   grid-area: widget-4;
-   background-color: magenta;
-}
+    #widget6 {
+       grid-area: widget-6;
+       -ms-grid-area: widget-6;
+       -webkit-grid-area: widget-6;
+    }
 
-#widget5 {
-   grid-area: widget-5;
-   background-color: red;
-}
-
-#widget6 {
-   grid-area: widget-6;
-   background-color: black;
-}
-
-</style>
+  </style>
 </head>
 <body>
-
-<div class="grid">
-    <div id="topPanel"    class="sizedToGridArea"></div>
-    <div id="topSubpanel" class="sizedToGridArea"></div>
-    <div id="leftPanel"   class="sizedToGridArea"></div>
-    <div id="widget1"     class="sizedToGridArea"></div>
-    <div id="widget2"     class="sizedToGridArea"></div>
-    <div id="widget3"     class="sizedToGridArea"></div>
-    <div id="widget4"     class="sizedToGridArea"></div>
-    <div id="widget5"     class="sizedToGridArea"></div>
-    <div id="widget6"     class="sizedToGridArea"></div>
-</div>
-
-
+    <div class="grid">
+        <div id="topPanel"></div>
+        <div id="topSubpanel"></div>
+        <div id="leftPanel"></div>
+        <div id="widget1"></div>
+        <div id="widget2"></div>
+        <div id="widget3"></div>
+        <div id="widget4"></div>
+        <div id="widget5"></div>
+        <div id="widget6"></div>
+    </div>
 </body>
 </html>

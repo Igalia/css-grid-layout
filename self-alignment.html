@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/grid.css" rel="stylesheet">
+    <style>
+      .grid {
+          grid-template-columns: 100px 100px;
+          -webkit-grid-template-columns: 100px 100px;
+          -ms-grid-columns: 100px 100px;
+          grid-template-rows: 200px 200px;
+          -webkit-grid-template-rows: 200px 200px;
+          -ms-grid-rows: 200px 200px;
+          width: -webkit-fit-content;
+      }
+
+      .item {
+          width: 30px;
+          height: 60px;
+      }
+
+      .content {
+          width: 10px;
+          height: 20px;
+          background: black;
+      }
+
+      .alignItemsStart {
+          align-items: start;
+      }
+      .alignItemsEnd {
+          align-items: end;
+      }
+      .justifyItemsStart {
+          justify-items: start;
+      }
+      .justifyItemsEnd {
+          justify-items: end;
+      }
+
+      .alignSelfSelfStart {
+          align-self: self-start;
+      }
+      .alignSelfSelfEnd {
+          align-self: self-end;
+      }
+      .justifySelfSelfStart {
+          justify-self: self-start;
+      }
+      .justifySelfSelfEnd {
+          justify-self: self-end;
+      }
+
+      .verticalRL {
+          -webkit-writing-mode: vertical-rl;
+      }
+
+      .verticalLR {
+          -webkit-writing-mode: vertical-lr;
+      }
+
+      .directionRTL {
+          direction: rtl;
+      }
+    </style>
+</head>
+<body>
+    <p>Item at 1:1 has a different block-axis direction. The 'self-start' value aligns the alignment subject to be flush with the edge of the alignment container corresponding to the alignment subject's start side.</p>
+
+    <div class="grid verticalRL alignItemsStart justifyItemsStart">
+        <div class="item row1-column1 verticalLR alignSelfSelfStart">
+            <div class="content"></div>
+        </div>
+        <div class="item row1-column2">
+            <div class="content"></div>
+        </div>
+        <div class="item row2-column1">
+            <div class="content"></div>
+        </div>
+        <div class="item row2-column2">
+            <div class="content"></div>
+        </div>
+    </div>
+
+    <p>Item at 1:1 has a different inline-axis direction. The 'self-end' value aligns the alignment subject to be flush with the edge of the alignment container corresponding to the alignment subject's end side.</p>
+
+    <div class="grid alignItemsEnd justifyItemsEnd">
+        <div class="item row1-column1 directionRTL justifySelfSelfEnd">
+            <div class="content"></div>
+        </div>
+        <div class="item row1-column2">
+            <div class="content"></div>
+        </div>
+        <div class="item row2-column1">
+            <div class="content"></div>
+        </div>
+        <div class="item row2-column2">
+            <div class="content"></div>
+        </div>
+    </div>
+</body>
+</html>

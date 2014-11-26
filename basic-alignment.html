@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/grid.css" rel="stylesheet">
+    <style>
+      .grid {
+          grid-template-columns: 100px 100px;
+          -webkit-grid-template-columns: 100px 100px;
+          -ms-grid-columns: 100px 100px;
+          grid-template-rows: 150px 150px;
+          -webkit-grid-template-rows: 150px 150px;
+          -ms-grid-rows: 150px 150px;
+          width: -webkit-fit-content;
+      }
+
+      .item {
+          width: 30px;
+          height: 60px;
+      }
+
+      .content {
+          width: 10px;
+          height: 20px;
+          background: black;
+      }
+
+      .alignSelfStretch {
+          align-self: stretch;
+      }
+
+      .alignSelfEnd {
+          align-self: end;
+      }
+
+      .justifySelfStart {
+          justify-self: start;
+      }
+
+      .alignItemsCenter {
+          align-items: center;
+      }
+
+      .justifyItemsCenter {
+          justify-items: center;
+      }
+    </style>
+</head>
+<body>
+    <p>Initial alignment values and auto-sized grid items: 'stretch'</p>
+
+    <div class="grid">
+        <div class="row1-column1">
+            <div class="content"></div>
+        </div>
+        <div class="row1-column2">
+            <div class="content"></div>
+        </div>
+        <div class="row2-column1">
+            <div class="content"></div>
+        </div>
+        <div class="row2-column2">
+            <div class="content"></div>
+        </div>
+    </div>
+
+    <p>Default alignment: 'center'. Self Alignment for specific Grid Items.</p>
+
+    <div class="grid alignItemsCenter justifyItemsCenter">
+        <div class="row1-column1 alignSelfStretch">
+            <div class="content"></div>
+        </div>
+        <div class="item row1-column2 justifySelfStart">
+            <div class="content"></div>
+        </div>
+        <div class="item row2-column1 alignSelfEnd">
+            <div class="content"></div>
+        </div>
+        <div class="item row2-column2">
+            <div class="content"></div>
+        </div>
+    </div>
+</body>
+</html>

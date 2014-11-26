@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/grid.css" rel="stylesheet">
+    <style>
+      .grid {
+          grid-template-columns: 100px 100px 100px;
+          -webkit-grid-template-columns: 100px 100px 100px;
+          -ms-grid-columns: 100px 100px 100px;
+          grid-template-rows: 100px 100px 100px;
+          -webkit-grid-template-rows: 100px 100px 100px;
+          -ms-grid-rows: 100px 100px 100px;
+          width: -webkit-fit-content;
+      }
+
+      .item {
+          width: 20px;
+          height: 30px;
+      }
+
+      .content {
+          width: 5px;
+          height: 10px;
+          background: black;
+      }
+
+      .alignSelfStart {
+          align-self: start;
+      }
+      .alignSelfCenter {
+          align-self: center;
+      }
+      .alignSelfEnd {
+          align-self: end;
+      }
+
+      .justifySelfStart {
+          justify-self: start;
+      }
+      .justifySelfCenter {
+          justify-self: center;
+      }
+      .justifySelfEnd {
+          justify-self: end;
+      }
+
+      .alignItemsCenter {
+          align-items: center;
+      }
+      .justifyItemsCenter {
+          justify-items: center;
+      }
+    </style>
+</head>
+<body>
+    <p>All grid items in the same Grid Cell, using different alignment values.</p>
+
+    <div class="grid">
+        <div class="item row1-column1 alignSelfStart justifySelfStart">
+            <div class="content"></div>
+        </div>
+        <div class="item row1-column1 alignSelfCenter justifySelfStart">
+            <div class="content"></div>
+        </div>
+        <div class="item row1-column1 alignSelfEnd justifySelfStart">
+            <div class="content"></div>
+        </div>
+        <div class="item row1-column1 alignSelfStart justifySelfCenter">
+            <div class="content"></div>
+        </div>
+        <div class="item row1-column1 alignSelfCenter justifySelfCenter">
+            <div class="content"></div>
+        </div>
+        <div class="item row1-column1 alignSelfEnd justifySelfCenter">
+            <div class="content"></div>
+        </div>
+        <div class="item row1-column1 alignSelfStart justifySelfEnd">
+            <div class="content"></div>
+        </div>
+        <div class="item row1-column1 alignSelfCenter justifySelfEnd">
+            <div class="content"></div>
+        </div>
+        <div class="item row1-column1 alignSelfEnd justifySelfEnd">
+            <div class="content"></div>
+        </div>
+    </div>
+
+    <p>All grid items centered in block and inline axixs.</p>
+
+    <div class="grid alignItemsCenter justifyItemsCenter" >
+        <div class="item row1-column1">
+            <div class="content"></div>
+        </div>
+        <div class="item row1-column2">
+            <div class="content"></div>
+        </div>
+        <div class="item row1-column3">
+            <div class="content"></div>
+        </div>
+        <div class="item row2-column1">
+            <div class="content"></div>
+        </div>
+        <div class="item row2-column2">
+            <div class="content"></div>
+        </div>
+        <div class="item row2-column3">
+            <div class="content"></div>
+        </div>
+        <div class="item row3-column1">
+            <div class="content"></div>
+        </div>
+        <div class="item row3-column2">
+            <div class="content"></div>
+        </div>
+        <div class="item row3-column3">
+            <div class="content"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/grid.css" rel="stylesheet">
+    <style>
+      body {
+          margin: 0;
+      }
+
+      .grid {
+          grid-template-columns: 75px 75px;
+          -webkit-grid-template-columns: 75px 75px;
+          -ms-grid-columns: 75px 75px;
+          grid-template-rows: 60px 60px 60px;
+          -webkit-grid-template-rows: 60px 60px 60px;
+          -ms-grid-rows: 60px 60px 60px;
+          width: -webkit-fit-content;
+      }
+
+      .container {
+          margin-left: 15px;
+          float: left;
+      }
+
+      .cellOverflowWidth {
+          width: 95px;
+          height: 20px;
+      }
+
+      .cellOverflowHeight {
+          width: 25px;
+          height: 80px;
+      }
+
+      .cellWithNoOverflow {
+          width: 25px;
+          height: 20px;
+      }
+
+      .alignItemsCenter {
+          align-items: center;
+      }
+
+      .alignItemsCenterSafe {
+          align-items: center safe;
+      }
+
+      .alignItemsCenterTrue {
+          align-items: center true;
+      }
+
+      .alignSelfStretch {
+          align-self: stretch;
+      }
+
+      .justifyItemsCenter {
+          justify-items: center;
+      }
+
+      .justifyItemsCenterSafe {
+          justify-items: center safe;
+      }
+
+      .justifyItemsCenterTrue {
+          justify-items: center true;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Default ('true') overflow value. <br>It may cause data lost overflowing the left edge.</p>
+
+        <div class="grid alignItemsCenter justifyItemsCenter">
+            <div class="cellOverflowWidth  row1-column1"></div>
+            <div class="cellWithNoOverflow row2-column1"></div>
+            <div class="row3-column1 alignSelfStretch justifySelfStretch"></div>
+            <div class="cellWithNoOverflow row1-column2"></div>
+            <div class="cellOverflowWidth  row2-column2"></div>
+            <div class="row3-column2 alignSelfStretch justifySelfStretch"></div>
+        </div>
+
+        <p>The 'safe' overflow value prevents data lost <br>when overflowing the left edge.</p>
+
+        <div class="grid alignItemsCenterSafe justifyItemsCenterSafe">
+            <div class="cellOverflowWidth  row1-column1"></div>
+            <div class="cellWithNoOverflow row2-column1"></div>
+            <div class="row3-column1 alignSelfStretch justifySelfStretch"></div>
+            <div class="cellWithNoOverflow row1-column2"></div>
+            <div class="cellOverflowWidth  row2-column2"></div>
+            <div class="row3-column2 alignSelfStretch justifySelfStretch"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <p>Explicit 'true' overflow value. <br>It may case data lost overflowing the top edge.</p>
+
+        <div class="grid alignItemsCenterTrue justifyItemsCenterTrue">
+            <div class="cellOverflowHeight row1-column1"></div>
+            <div class="cellWithNoOverflow row2-column1 "></div>
+            <div class="row3-column1 alignSelfStretch justifySelfStretch"></div>
+            <div class="row1-column2 alignSelfStretch justifySelfStretch"></div>
+            <div class="cellWithNoOverflow row2-column2"></div>
+            <div class="cellOverflowHeight row3-column2"></div>
+        </div>
+
+        <p>The 'safe' overflow value prevents data lost <br>when overflowing the top edge.</p>
+
+        <div class="grid alignItemsCenterSafe justifyItemsCenterSafe">
+            <div class="cellOverflowHeight row1-column1"></div>
+            <div class="cellWithNoOverflow row2-column1"></div>
+            <div class="row3-column1 alignSelfStretch justifySelfStretch"></div>
+            <div class="row1-column2 alignSelfStretch justifySelfStretch"></div>
+            <div class="cellWithNoOverflow row2-column2"></div>
+            <div class="cellOverflowHeight  row3-column2"></div>
+        </div>
+    </div>
+
+</body>
+</html>

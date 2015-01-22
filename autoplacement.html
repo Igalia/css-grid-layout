@@ -51,6 +51,11 @@
         #new {
             padding-left: 25px;
         }
+
+        .grid div {
+            width: 100%;
+            height: 100%;
+        }
     </style>
     <script>
         function randomColor() {
@@ -92,6 +97,14 @@
 
             addGridItem();
         }
+
+        function updateGridAutoFlow() {
+            var grid = document.getElementById("grid");
+            var flow = document.getElementById("flow");
+
+            grid.style.webkitGridAutoFlow = flow.value;
+            grid.style.gridAutoFlow = flow.value;
+        }
     </script>
 </head>
 <body>
@@ -99,7 +112,15 @@
     </div>
     <div style="clear: both;"></div>
     <div id="new">
-        <h2>CSS Grid Layout Auto-placement Algorithm</h2>
+        <h2>CSS Grid Layout: <a href="http://dev.w3.org/csswg/css-grid/#auto-placement-algo">Grid Item Placement Algorithm</a></h2>
+        <p>Property <a href="http://dev.w3.org/csswg/css-grid/#grid-auto-flow-property"><code>grid-auto-flow</code></a> is
+        <select id="flow" onchange="updateGridAutoFlow();">
+            <option value="row" selected>row</option>
+            <option value="column">column</option>
+            <option value="row dense">row dense</option>
+            <option value="column dense">column dense</option>
+        </select>
+        </p>
         <p>New grid item at
         row
         <select id="row">
@@ -130,7 +151,6 @@
         </p>
         <button onClick="addGridItem();">Add</button>
         <button onClick="addRandomGridItem();">Add random</button>
-        <p><a href="http://www.w3.org/TR/css-grid-1/#auto-placement">Spec</a></p>
     </div>
     <table id="table">
         <tr>

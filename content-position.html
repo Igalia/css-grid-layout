@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/grid.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .grid {
+            grid-template-columns: 50px 50px;
+            -webkit-grid-template-columns: 50px 50px;
+            -ms-grid-template-columns: 50px 50px;
+            grid-template-rows: 100px 120px;
+            -webkit-grid-template-rows: 100px 100px;
+            -ms-grid-template-rows: 100px 100px;
+        }
+
+        .containerGrid {
+            display: grid;
+            display: -webkit-grid;
+            display: -ms-grid;
+            grid-template-areas: "c1 c2"
+                                 "c1 c3"
+                                 "c4 c4";
+            -webkit-grid-template-areas: "c1 c2"
+                                         "c1 c3"
+                                         "c4 c4";
+            -ms-grid-template-areas: "c1 c2"
+                                     "c1 c3"
+                                     "c4 c4";
+            grid-auto-columns: auto;
+            grid-auto-rows: auto;
+            justify-content: space-between;
+            align-content: space-between;
+            width: 400px;
+            height: 350px;
+        }
+
+        .c1 {
+           grid-area: c1;
+           -webkit-grid-area: c1;
+           -ms-grid-area: c1;
+        }
+        .c2 {
+           grid-area: c2;
+           -webkit-grid-area: c2;
+           -ms-grid-area: c2;
+        }
+        .c3 {
+           grid-area: c3;
+           -webkit-grid-area: c3;
+           -ms-grid-area: c3;
+        }
+        .c4 {
+           grid-area: c4;
+           -webkit-grid-area: c4;
+           -ms-grid-area: c4;
+        }
+
+        .cell {
+            width: 20px;
+            height: 40px;
+        }
+        .overflowWidth {
+            width: 60px;
+            height: 300px;
+        }
+        .overflowHeight {
+            width: 200px;
+            height: 150px;
+        }
+        .noOverflow {
+            width: 200px;
+            height: 300px;
+        }
+    </style>
+    <script>
+        function change_justify_position(obj) {
+           var grid = document.getElementById("grid");
+	   grid.style.justifyContent=obj.value;
+        }
+        function change_align_position(obj) {
+           var grid = document.getElementById("grid");
+	   grid.style.alignContent=obj.value;
+        }
+        function change_dimensions(obj) {
+           var grid = document.getElementById("grid");
+           grid.classList.remove(grid.classList.item(1));
+           grid.classList.add(obj.value);
+        }
+    </script>
+</head>
+<body>
+    <div class="containerGrid">
+        <div class="container c1">
+            <div id="grid" class="grid noOverflow">
+                <div class="cell row1-column1"></div>
+                <div class="row2-column1"></div>
+                <div class="row1-column2"></div>
+                <div class="cell row2-column2"></div>
+            </div>
+        </div>
+        <div class="container c2">
+            <div><label><b>justify-content:</b></label></div>
+            <div><label><input type="radio" name="justify-content" onclick="change_justify_position(this)" value="start true">start end</label></div>
+            <div><label><input type="radio" name="justify-content" onclick="change_justify_position(this)" value="start safe">start safe</label></div>
+            <div><label><input type="radio" name="justify-content" onclick="change_justify_position(this)" value="center true">center true</label></div>
+            <div><label><input type="radio" name="justify-content" onclick="change_justify_position(this)" value="center safe">center safe</label></div>
+            <div><label><input type="radio" name="justify-content" onclick="change_justify_position(this)" value="end true">end true</label></div>
+            <div><label><input type="radio" name="justify-content" onclick="change_justify_position(this)" value="end safe">end safe</label></div>
+        </div>
+        <div class="container c3">
+            <div><label><b>align-content:</b></label></div>
+            <div><label><input type="radio" name="align-content" onclick="change_align_position(this)" value="start true">start true</label></div>
+            <div><label><input type="radio" name="align-content" onclick="change_align_position(this)" value="start safe">start safe</label></div>
+            <div><label><input type="radio" name="align-content" onclick="change_align_position(this)" value="center true">center true</label></div>
+            <div><label><input type="radio" name="align-content" onclick="change_align_position(this)" value="center safe">center safe</label></div>
+            <div><label><input type="radio" name="align-content" onclick="change_align_position(this)" value="end true">end true</label></div>
+            <div><label><input type="radio" name="align-content" onclick="change_align_position(this)" value="end safe">end safe</label></div>
+        </div>
+        <div class="container c4">
+            <div><label><b>Overflow:</b></label></div>
+            <label><input type="radio" name="dimensions" onclick="change_dimensions(this)" value="noOverflow">no overflow</label>
+            <label><input type="radio" name="dimensions" onclick="change_dimensions(this)" value="overflowWidth">overflow width</label>
+            <label><input type="radio" name="dimensions" onclick="change_dimensions(this)" value="overflowHeight">overflow height</label>
+        </div>
+    </div>
+</body>
+</html>

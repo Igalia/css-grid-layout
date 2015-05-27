@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/grid.css" rel="stylesheet">
+    <style>
+        .grid {
+            grid-auto-columns: 20px;
+            -webkit-grid-auto-columns: 20px;
+            -ms-grid-auto-columns: 20px;
+            grid-auto-rows: 40px;
+            -webkit-grid-auto-rows: 40px;
+            -ms-grid-auto-rows: 40px;
+            grid-template-areas: "a a b"
+                                 "c d b";
+            -webkit-grid-template-areas: "a a b"
+                                         "c d b";
+            -ms-grid-template-areas: "a a b"
+                                     "c d b";
+            width: 300px;
+            height: 200px;
+        }
+
+        .containerGrid {
+            display: grid;
+            display: -webkit-grid;
+            display: -ms-grid;
+            grid-template-areas: "c1 c1 c1"
+                                 "c2 c3 c3";
+            -webkit-grid-template-areas: "c1 c1 c1"
+                                         "c2 c3 c3";
+            -ms-grid-template-areas: "c1 c1 c1"
+                                     "c2 c3 c3";
+            grid-auto-columns: auto;
+            grid-auto-rows: auto;
+        }
+
+        .container {
+           margin: 10px;
+        }
+
+        .c1 {
+           grid-area: c1;
+           -webkit-grid-area: c1;
+           -ms-grid-area: c1;
+        }
+        .c2 {
+           grid-area: c2;
+           -webkit-grid-area: c2;
+           -ms-grid-area: c2;
+        }
+        .c3 {
+           grid-area: c3;
+           -webkit-grid-area: c3;
+           -ms-grid-area: c3;
+        }
+
+        .a {
+            grid-area: a;
+            -webkit-grid-area: a;
+            -ms-grid-area: a;
+        }
+        .b {
+            grid-area: b;
+            -webkit-grid-area: b;
+            -ms-grid-area: b;
+        }
+        .c {
+            grid-area: c;
+            -webkit-grid-area: c;
+            -ms-grid-area: c;
+        }
+        .d {
+            grid-area: d;
+            -webkit-grid-area: d;
+            -ms-grid-area: d;
+        }
+
+        .stretchedColumnGrid {
+            grid-auto-columns: auto;
+            -webkit-grid-auto-columns: auto;
+            -ms-grid-auto-columns: auto;
+        }
+
+        .stretchedRowGrid {
+            grid-auto-rows: auto;
+            -webkit-grid-auto-rows: auto;
+            -ms-grid-auto-rows: auto;
+        }
+
+        .spaceBetween {
+            justify-content: space-between;
+            align-content: space-between;
+        }
+        .spaceAround {
+            justify-content: space-around;
+            align-content: space-around;
+        }
+        .spaceEvenly {
+            justify-content: space-evenly;
+            align-content: space-evenly;
+        }
+        .stretch {
+            justify-content: stretch;
+            align-content: stretch;
+        }
+    </style>
+    <script>
+        function change_justify_position(obj) {
+           var grid = document.getElementById("grid");
+
+           if (obj.value == "stretch")
+              grid.classList.add("stretchedColumnGrid");
+           else
+              grid.classList.remove("stretchedColumnGrid");
+
+	   grid.style.justifyContent=obj.value;
+        }
+        function change_align_position(obj) {
+           var grid = document.getElementById("grid");
+
+           if (obj.value == "stretch")
+              grid.classList.add("stretchedRowGrid");
+           else
+              grid.classList.remove("stretchedRowGrid");
+
+	   grid.style.alignContent=obj.value;
+        }
+    </script>
+</head>
+<body>
+    <div class="containerGrid">
+        <div class="container c1">
+            <div>
+                <label><b>justify-content:</b></label>
+            </div>
+            <div>
+                <label><input type="radio" name="justify-content" onclick="change_justify_position(this)" value="space-around">space-around</label>
+                <label><input type="radio" name="justify-content" onclick="change_justify_position(this)" value="space-between">space-between</label>
+                <label><input type="radio" name="justify-content" onclick="change_justify_position(this)" value="space-evenly">space-evenly</label>
+                <label><input type="radio" name="justify-content" onclick="change_justify_position(this)" value="stretch">stretch</label>
+                <label><input type="radio" name="justify-content" onclick="change_justify_position(this)" value="start">start</label>
+                <label><input type="radio" name="justify-content" onclick="change_justify_position(this)" value="end">end</label>
+                <label><input type="radio" name="justify-content" onclick="change_justify_position(this)" value="center">center</label>
+            </div>
+        </div>
+        <div class="container c2">
+            <div><label><b>align-content:</b></label></div>
+            <div><label><input type="radio" name="align-content" onclick="change_align_position(this)" value="space-around">space-around</label></div>
+            <div><label><input type="radio" name="align-content" onclick="change_align_position(this)" value="space-between">space-between</label></div>
+            <div><label><input type="radio" name="align-content" onclick="change_align_position(this)" value="space-evenly">space-evenly</label></div>
+            <div><label><input type="radio" name="align-content" onclick="change_align_position(this)" value="stretch">stretch</label></div>
+            <div><label><input type="radio" name="align-content" onclick="change_align_position(this)" value="start">start</label></div>
+            <div><label><input type="radio" name="align-content" onclick="change_align_position(this)" value="end">end</label></div>
+            <div><label><input type="radio" name="align-content" onclick="change_align_position(this)" value="center">center</label></div>
+        </div>
+        <div class="container c3">
+            <div id="grid" class="grid">
+                <div class="a"></div>
+                <div class="b"></div>
+                <div class="c"></div>
+                <div class="d"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

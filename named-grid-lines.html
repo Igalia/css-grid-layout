@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/grid.css" rel="stylesheet">
+    <style>
+        .grid {
+            -webkit-grid-template-rows: [top] 100px [main] 1fr [footer] 50px [bottom];
+            -webkit-grid-template-columns: [left nav] 200px [middle main] 1fr [right];
+            grid-template-rows: [top] 100px [center] 1fr [footer] 50px [bottom];
+            grid-template-columns: [left nav] 200px [middle main] 1fr [right];
+            width: 600px;
+            height: 400px;
+        }
+
+        #title {
+            -webkit-grid-row: top;
+            grid-row: top;
+            -webkit-grid-column: left / right;
+            grid-column: left / right;
+        }
+
+        #nav {
+            -webkit-grid-row: main / bottom;
+            grid-row: main / bottom;
+            -webkit-grid-column: nav;
+            grid-column: nav;
+        }
+
+        #main {
+            -webkit-grid-row: main;
+            grid-row: main
+            -webkit-grid-column: main;
+            grid-column: main;
+        }
+
+        #footer {
+            -webkit-grid-row: footer;
+            grid-row: footer;
+            -webkit-grid-column: middle;
+            grid-column: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+      <div id="title">title</div>
+      <div id="nav">nav</div>
+      <div id="main">main</div>
+      <div id="footer">footer</div>
+    </div>
+</body>
+</html>

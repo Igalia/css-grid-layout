@@ -1,0 +1,17 @@
+.flex {
+    background-color: silver;
+    display: flex;
+    height: 100px;
+}
+.grid {
+    background-color: silver;
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    grid-template-rows: 100px;
+}
+.i1 { background-color: cyan; }
+.i2 { background-color: magenta; }
+.i3 { background-color: yellow; }
+.flex > .i1 { flex-basis: 100px; }
+.flex > .i2 { flex: 1; }
+

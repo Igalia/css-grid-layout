@@ -50,10 +50,10 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="media thumbnail">
-                        <img class="pull-left media-object" src="img/webkit.png" alt="WebKit logo">
+                        <img class="pull-left media-object" src="img/firefox.png" alt="Firefox logo">
                         <div class="media-body">
-                            <h3 class="media-heading"><a href="http://nightly.webkit.org/">WebKit</a></h3>
-                            <p>Enabled by default in WebKit Nightly Builds since 2 Apr 2014 (<a href="http://trac.webkit.org/changeset/166614">r166614</a>).</p>
+                            <h3 class="media-heading"><a href="https://mozilla.org/firefox">Firefox</a></h3>
+                            <p>Enable the flag called <strong>layout.css.grid.enabled</strong> going to:<br><a href="about:config">about:config</a></p>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,8 @@
                         <img class="pull-left media-object" src="img/internet-explorer.png" alt="Internet Explorer logo">
                         <div class="media-body">
                             <h3 class="media-heading"><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">Internet Explorer</a></h3>
-                            <p>Enabled by default since IE10.</p>
+                            <p>Enabled by default since IE10 (old syntax).</p>
+                            <p><span class="label label-warning">Prefixed</span> <code>-ms</code></p>
                         </div>
                     </div>
                 </div>
@@ -74,6 +75,21 @@
                             <p>Enable the flag called <strong>Enable experimental Web Platform features</strong> going to:<br><a href="opera://flags/#enable-experimental-web-platform-features">opera://flags/#enable-experimental-web-platform-features</a></p>
                         </div>
                     </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="media thumbnail">
+                        <img class="pull-left media-object" src="img/webkit.png" alt="WebKit logo">
+                        <div class="media-body">
+                            <h3 class="media-heading"><a href="http://nightly.webkit.org/">WebKit</a></h3>
+                            <p>Enabled by default in WebKit Nightly Builds.</p>
+                            <p><span class="label label-warning">Prefixed</span> <code>-webkit</code></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-warning">Check the <a href="https://github.com/FremyCompany/css-grid-polyfill">CSS Grid Layout polyfill by François Remy</a>.</div>
                 </div>
             </div>
         </div>

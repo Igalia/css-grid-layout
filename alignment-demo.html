@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/grid.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 120%;
+            margin: 0;
+            padding: 0;
+        }
+
+        code {
+            font-size: 110%;
+            font-weight: bold;
+        }
+
+        select {
+            font-size: 110%;
+        }
+
+        .grid {
+            margin: 50px;
+            float: left;
+            -webkit-grid-template-columns: 200px 200px 200px;
+            grid-template-columns: 200px 200px 200px;
+            -webkit-grid-template-rows: 200px 200px;
+            grid-template-rows: 200px 200px;
+        }
+
+        #table {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            border-collapse: collapse;
+            width: 600px;
+            height: 400px;
+        }
+
+        #table tr {
+            height: 200px;
+        }
+
+        #table td {
+            border: 2px dashed grey;
+            width: 300px;
+        }
+
+        #properties {
+            padding-left: 25px;
+        }
+
+        .grid div {
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .item3 {
+            -webkit-grid-row: span 2;
+            grid-row: span 2;
+        }
+
+        .item4 {
+            -webkit-grid-column: span 2;
+            grid-column: span 2;
+        }
+    </style>
+    <script>
+        function updateJustifyItems() {
+            var grid = document.getElementById("grid");
+            var justifyItems = document.getElementById("justify-items");
+
+            grid.style.webkitJustifyItems = justifyItems.value;
+            grid.style.justifyItems = justifyItems.value;
+        }
+
+        function updateAlignItems() {
+            var grid = document.getElementById("grid");
+            var alignItems = document.getElementById("align-items");
+
+            grid.style.webkitAlignItems = alignItems.value;
+            grid.style.alignItems = alignItems.value;
+        }
+    </script>
+</head>
+<body>
+    <div id="grid" class="grid">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2<br>with two lines</div>
+        <div class="item3">Item 3<br>(spanning 2 rows)</div>
+        <div class="item4">Item 4<br>(spanning 2 columns)</div>
+    </div>
+    <div style="clear: both;"></div>
+    <div id="properties">
+        <h2>CSS Grid Layout: <a href="https://drafts.csswg.org/css-grid/#alignment">Alignment</a></h2>
+        <p>Property <a href="http://www.w3.org/TR/css3-align/#propdef-justify-items"><code>justify-items</code></a> is
+            <select id="justify-items" onchange="updateJustifyItems();">
+                <option value="stretch" selected>stretch</option>
+                <option value="start">start</option>
+                <option value="center">center</option>
+                <option value="end">end</option>
+            </select>
+        </p>
+        <p>Property <a href="http://www.w3.org/TR/css3-align/#propdef-align-items"><code>align-items</code></a> is
+            <select id="align-items" onchange="updateAlignItems();">
+                <option value="stretch" selected>stretch</option>
+                <option value="start">start</option>
+                <option value="center">center</option>
+                <option value="end">end</option>
+            </select>
+        </p>
+    </div>
+    <table id="table">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

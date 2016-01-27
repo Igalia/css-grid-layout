@@ -1,0 +1,226 @@
+<svg width="1000" height="800" xmlns="http://www.w3.org/2000/svg">
+    <style type="text/css">
+        .background {
+            fill-opacity: 1;
+            rx: 0px;
+            ry: 0px;
+            fill: #FFF;
+        }
+
+        line {
+            stroke: #333333;
+            stroke-width: 5;
+            stroke-linecap: round;
+            stroke-dasharray: 10 10;
+        }
+
+        .implicit {
+            stroke: red;
+        }
+
+        text {
+            font-size: 20px;
+            font-family: monospace;
+            text-anchor: middle;
+        }
+
+        rect {
+            fill-opacity: 0.8;
+            rx: 10px;
+            ry: 10px;
+            stroke-width: 5;
+        }
+
+        .item-1 {
+            fill: #F22E8A;
+            stroke: #F22E8A;
+        }
+
+        .item-2 {
+            fill: #62CDD9;
+            stroke: #62CDD9;
+        }
+
+        .item-3 {
+            fill: #75BF06;
+            stroke: #75BF06;
+        }
+
+        .item-4 {
+            fill: #F2E205;
+            stroke: #F2E205;
+        }
+
+        .item-5 {
+            fill: #F2360C;
+            stroke: #F2360C;
+        }
+
+        .item-6 {
+            fill: #A6003E;
+            stroke: #A6003E;
+        }
+
+        .item-7 {
+            fill: #16818D;
+            stroke: #16818D;
+        }
+
+        .item-8 {
+            fill: #297300;
+            stroke: #297300;
+        }
+
+        .item-9 {
+            fill: #A69600;
+            stroke: #A69600;
+        }
+
+        .item-10 {
+            fill: #A60000;
+            stroke: #A60000;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .small {
+            font-size: 15px;
+        }
+
+        .big {
+            font-size: 30px;
+        }
+
+        .linename {
+            font-size: 19px;
+        }
+
+        .end {
+            text-anchor: end;
+        }
+
+        .start {
+            text-anchor: start;
+        }
+
+        .implicit-text {
+            fill: red;
+        }
+
+        .white {
+            fill: white;
+        }
+
+    </style>
+
+    <rect class="background" x="0" y="0" width="1000" height="800" />
+
+    <g transform="translate(110, 780)">
+        <text class="small" x="50" y="0">[left]</text>
+        <text class="small" x="250" y="0">[main-start]</text>
+        <text class="small" x="350" y="0">[center]</text>
+        <text class="small" x="550" y="0">[main-end]</text>
+        <text class="small" x="650" y="0">[right]</text>
+    </g>
+
+    <g transform="translate(930, 105)">
+        <text class="small" x="0" y="90">[top]</text>
+        <text class="small" x="0" y="110">[title-start]</text>
+        <text class="small" x="0" y="140">[title-end]</text>
+        <text class="small" x="0" y="160">[main-start]</text>
+        <text class="small" x="0" y="340">[main-end]</text>
+        <text class="small" x="0" y="360">[center]</text>
+        <text class="small" x="0" y="600">[bottom]</text>
+    </g>
+
+    <g transform="translate(110, 50)">
+        <text x="50" y="0">1</text>
+        <text x="250" y="0">2</text>
+        <text x="350" y="0">3</text>
+        <text x="450" y="0">4</text>
+        <text x="550" y="0">5</text>
+        <text x="600" y="0">6</text>
+        <text x="650" y="0">7</text>
+        <text class="implicit-text" x="700" y="0">8</text>
+        <text class="implicit-text" x="750" y="0">9</text>
+    </g>
+
+    <g transform="translate(110, 80)">
+        <text class="implicit-text" x="0" y="0">-8</text>
+        <text x="50" y="0">-7</text>
+        <text x="250" y="0">-6</text>
+        <text x="350" y="0">-5</text>
+        <text x="450" y="0">-4</text>
+        <text x="550" y="0">-3</text>
+        <text x="600" y="0">-2</text>
+        <text x="650" y="0">-1</text>
+    </g>
+
+    <g transform="translate(50, 105)">
+        <text x="0" y="100">1</text>
+        <text x="0" y="150">2</text>
+        <text x="0" y="350">3</text>
+        <text x="0" y="500">4</text>
+        <text x="0" y="600">5</text>
+        <text class="implicit-text" x="0" y="650">6</text>
+    </g>
+
+    <g transform="translate(80, 105)">
+        <text class="implicit-text" x="0" y="0">-7</text>
+        <text class="implicit-text" x="0" y="50">-6</text>
+        <text x="0" y="100">-5</text>
+        <text x="0" y="150">-4</text>
+        <text x="0" y="350">-3</text>
+        <text x="0" y="500">-2</text>
+        <text x="0" y="600">-1</text>
+    </g>
+
+    <g transform="translate(110, 100)">
+        <line class="dashed implicit" x1="0" y1="0" x2="750" y2="0" />
+        <line class="dashed implicit" x1="0" y1="50" x2="750" y2="50" />
+        <line class="dashed implicit" x1="0" y1="100" x2="50" y2="100" />
+        <line class="dashed" x1="50" y1="100" x2="650" y2="100" />
+        <line class="dashed implicit" x1="650" y1="100" x2="750" y2="100" />
+        <line class="dashed implicit" x1="0" y1="150" x2="50" y2="150" />
+        <line class="dashed" x1="50" y1="150" x2="650" y2="150" />
+        <line class="dashed implicit" x1="650" y1="150" x2="750" y2="150" />
+        <line class="dashed implicit" x1="0" y1="350" x2="50" y2="350" />
+        <line class="dashed" x1="50" y1="350" x2="650" y2="350" />
+        <line class="dashed implicit" x1="650" y1="350" x2="750" y2="350" />
+        <line class="dashed implicit" x1="0" y1="500" x2="50" y2="500" />
+        <line class="dashed" x1="50" y1="500" x2="650" y2="500" />
+        <line class="dashed implicit" x1="650" y1="500" x2="750" y2="500" />
+        <line class="dashed implicit" x1="0" y1="600" x2="50" y2="600" />
+        <line class="dashed" x1="50" y1="600" x2="650" y2="600" />
+        <line class="dashed implicit" x1="650" y1="600" x2="750" y2="600" />
+        <line class="dashed implicit" x1="0" y1="650" x2="750" y2="650" />
+
+        <line class="dashed implicit" x1="0" y1="0" x2="0" y2="650" />
+        <line class="dashed implicit" x1="50" y1="0" x2="50" y2="100" />
+        <line class="dashed" x1="50" y1="100" x2="50" y2="600" />
+        <line class="dashed implicit" x1="50" y1="600" x2="50" y2="650" />
+        <line class="dashed implicit" x1="250" y1="0" x2="250" y2="100" />
+        <line class="dashed" x1="250" y1="100" x2="250" y2="600" />
+        <line class="dashed implicit" x1="250" y1="600" x2="250" y2="650" />
+        <line class="dashed implicit" x1="350" y1="0" x2="350" y2="100" />
+        <line class="dashed" x1="350" y1="100" x2="350" y2="600" />
+        <line class="dashed implicit" x1="350" y1="600" x2="350" y2="650" />
+        <line class="dashed implicit" x1="450" y1="0" x2="450" y2="100" />
+        <line class="dashed" x1="450" y1="100" x2="450" y2="600" />
+        <line class="dashed implicit" x1="450" y1="600" x2="450" y2="650" />
+        <line class="dashed implicit" x1="550" y1="0" x2="550" y2="100" />
+        <line class="dashed" x1="550" y1="100" x2="550" y2="600" />
+        <line class="dashed implicit" x1="550" y1="600" x2="550" y2="650" />
+        <line class="dashed implicit" x1="600" y1="0" x2="600" y2="100" />
+        <line class="dashed" x1="600" y1="100" x2="600" y2="600" />
+        <line class="dashed implicit" x1="600" y1="600" x2="600" y2="650" />
+        <line class="dashed implicit" x1="650" y1="0" x2="650" y2="100" />
+        <line class="dashed" x1="650" y1="100" x2="650" y2="600" />
+        <line class="dashed implicit" x1="650" y1="600" x2="650" y2="650" />
+        <line class="dashed implicit" x1="700" y1="0" x2="700" y2="650" />
+        <line class="dashed implicit" x1="750" y1="0" x2="750" y2="650" />
+
+    </g>
+</svg>

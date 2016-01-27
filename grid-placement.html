@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/grid.css" rel="stylesheet">
+    <style>
+        .grid {
+            background: none;
+            grid-template-columns: [left] 200px [main-start] 100px [center] 100px 100px [main-end] 50px 50px [right];
+            grid-template-rows: [top title-start] 50px [title-end main-start] 200px [main-end center] 150px 100px [bottom];
+            grid-auto-columns: 50px;
+            grid-auto-rows: 50px;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .grid {
+            position: absolute;
+            top: 100px;
+            left: 110px;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .grid > div {
+            opacity: 0.8;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+
+            display: grid;
+            grid: 100% / 100%;
+            justify-items: center;
+            align-items: center;
+        }
+
+        #item-1 {
+            background: rgba(242,46,138, 0.8);
+            border: 5px solid rgb(242,46,138);
+
+            grid-column: -8;
+            grid-row: -7;
+        }
+
+        #item-2 {
+            background: rgba(98,205,217, 0.8);
+            border: 5px solid rgb(98,205,217);
+
+            grid-column: -1 / span 2;
+            grid-row: span 2 / 1;
+        }
+
+        #item-3 {
+            background: rgba(117,191,6, 0.8);
+            border: 5px solid rgb(117,191,6);
+
+            grid-column: span 2 / center;
+            grid-row: auto / 1;
+        }
+
+        #item-4 {
+            background: rgba(242,226,5, 0.8);
+            border: 5px solid rgb(242,226,5);
+
+            grid-column: 1 / -1;
+            grid-row: title;
+        }
+
+        #item-5 {
+            background: rgba(242,54,12, 0.8);
+            border: 5px solid rgb(242,54,12);
+
+            grid-area: main;
+        }
+
+        #item-6 {
+            background: rgba(166,0,62, 0.8);
+            border: 5px solid rgb(166,0,62);
+
+            grid-column: 5 / span right;
+            grid-row: auto / center;
+        }
+
+        #item-7 {
+            background: rgba(22,129,141, 0.8);
+            border: 5px solid rgb(22,129,141);
+
+            grid-column: span bar / 9;
+            grid-row: center;
+        }
+
+        #item-8 {
+            background: rgba(41,115,0, 0.8);
+            border: 5px solid rgb(41,115,0);
+
+            grid-column: span 2 / 2;
+            grid-row: -2;
+        }
+
+        #item-9 {
+            background: rgba(166,150,0, 0.8);
+            border: 5px solid rgb(166,150,0);
+
+            grid-column: center / right;
+            grid-row: 5 / 4;
+        }
+
+        #item-10 {
+            background: rgba(166,0,0, 0.8);
+            border: 5px solid rgb(166,0,0);
+
+            grid-column: center;
+            grid-row: bottom / span bottom;
+        }
+
+        .text {
+            width: -webkit-max-content;
+            width: -moz-max-content;
+            width: max-content;
+            margin-left: 5px;
+        }
+
+        .start {
+            justify-self: start;
+        }
+
+        .big {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="grid-placement-lines.svg" alt="Grid Placement Lines" />
+    <div class="grid">
+        <div id="item-1"><div class="text start">grid-column: -8;<br>grid-row: -7;</div></div>
+        <div id="item-2"><div class="text start">grid-column: -1 / span 2;<br><br>grid-row: span 2 / 1;</div></div>
+        <div id="item-3"><div class="text">grid-column: span 2 / center;<br>grid-row: auto / 1;</div></div>
+        <div id="item-4"><div class="text">grid-column: 1 / -1; grid-row: title;</div></div>
+        <div id="item-5"><div class="text big">grid-area: main;</div></div>
+        <div id="item-6"><div class="text start">grid-column:<br>5 / span right;<br><br>grid-row:<br>auto / center;</div></div>
+        <div id="item-7"><div class="text big">grid-column: span bar / 9;<br>grid-row: center;</div></div>
+        <div id="item-8"><div class="text big">grid-column:<br>span 2 / 2;<br>grid-row: -2;</div></div>
+        <div id="item-9"><div class="text big">grid-column:<br>center / right;<br>grid-row: 5 / 4;</div></div>
+        <div id="item-10"><div class="text start">grid-column: center;<br>grid-row: bottom / span bottom;</div></div>
+    </div>
+</body>
+</html>

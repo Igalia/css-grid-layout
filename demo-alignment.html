@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+
+<style>
+
+.grid {
+    display: grid;
+    grid: 300px 300px 300px 300px 300px / 200px 200px 200px;
+    grid-auto-columns: 200px;
+    grid-auto-rows: 100px;
+    grid-gap: 10px;
+    margin: 50px;
+    position: absolute;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+img {
+    position: absolute;
+    top: 110px;
+    left: 210px;
+}
+
+h1 {
+    position: absolute;
+    top: 10px;
+    left: 675px;
+    text-transform: uppercase;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.grid > .item {
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.grid > .item:nth-child(1), .grid > .item:nth-child(11) {
+    background: rgba(242,46,138, 0.8);
+    border: 5px solid rgb(242,46,138);
+}
+
+.grid > .item:nth-child(2), .grid > .item:nth-child(12) {
+    background: rgba(98,205,217, 0.8);
+    border: 5px solid rgb(98,205,217);
+}
+
+.grid > .item:nth-child(3), .grid > .item:nth-child(13) {
+    background: rgba(117,191,6, 0.8);
+    border: 5px solid rgb(117,191,6);
+}
+
+.grid > .item:nth-child(4), .grid > .item:nth-child(14) {
+    background: rgba(242,226,5, 0.8);
+    border: 5px solid rgb(242,226,5);
+}
+
+.grid > .item:nth-child(5), .grid > .item:nth-child(15) {
+    background: rgba(242,54,12, 0.8);
+    border: 5px solid rgb(242,54,12);
+}
+
+.grid > .item:nth-child(6) {
+    background: rgba(166,0,62, 0.8);
+    border: 5px solid rgb(166,0,62);
+}
+
+
+.grid > .item:nth-child(7) {
+    background: rgba(22,129,141, 0.8);
+    border: 5px solid rgb(22,129,141);
+}
+
+.grid > .item:nth-child(8) {
+    background: rgba(41,115,0, 0.8);
+    border: 5px solid rgb(41,115,0);
+}
+
+.grid > .item:nth-child(9) {
+    background: rgba(166,150,0, 0.8);
+    border: 5px solid rgb(166,150,0);
+}
+
+.grid > .item:nth-child(10) {
+    background: rgba(166,0,0, 0.8);
+    border: 5px solid rgb(166,0,0);
+}
+
+.row1 {
+    grid-row: 1;
+}
+
+.row2 {
+    grid-row: 2;
+}
+
+.row3 {
+    grid-row: 3;
+}
+
+.row4 {
+    grid-row: 4;
+}
+
+.col1 {
+    grid-column: 1;
+}
+
+.col2 {
+    grid-column: 2;
+}
+
+.col3 {
+    grid-column: 3;
+}
+
+.col4 {
+    grid-column: 4;
+}
+
+.col5 {
+    grid-column: 5;
+}
+
+.align-buttons i {
+    transform: rotate(90deg);
+}
+
+.align-buttons {
+    grid-column: auto / 1;
+    align-self: center;
+    justify-self: end;
+    margin: 10px;
+}
+
+.justify-buttons {
+    grid-row: auto / 1;
+    align-self: end;
+    justify-self: center;
+    margin: 5px;
+}
+
+.empty {
+    grid-column: auto / 1;
+    grid-row: auto / 1;
+}
+
+</style>
+
+<script>
+
+function align(className, value) {
+    var row1 = document.getElementsByClassName(className);
+    for (var i = 0; i < row1.length; i++) {
+        row1[i].style.alignSelf = value;
+    }
+}
+
+function justify(className, value) {
+    var row1 = document.getElementsByClassName(className);
+    for (var i = 0; i < row1.length; i++) {
+        row1[i].style.justifySelf = value;
+    }
+}
+
+</script>
+
+<h1>CSS Grid Layout <a href="https://drafts.csswg.org/css-grid/#alignment">Alignment</a></h1>
+
+<img src="demo-alignment-lines.svg" alt="Demo Alignment Lines" />
+
+<div class="grid">
+    <div class="item row1 col1">Item 1</div>
+    <div class="item row1 col2">Item 2:<br>Two lines</div>
+    <div class="item row1 col3">Item 3: Some more text</div>
+    <div class="item row1 col4">Item 4:<br>One line<br>Another line<br>Last line</div>
+    <div class="item row1 col5">Item 5:<br>VeryLoooongText</div>
+    <div class="item row2 col1">Item 6:<br>One line<br>Another line<br>Last line</div>
+    <div class="item row2 col2">Item 7:<br>VeryLoooongText</div>
+    <div class="item row2 col3">Item 8</div>
+    <div class="item row2 col4">Item 9:<br>Two lines</div>
+    <div class="item row2 col5">Item 10: Some more text</div>
+    <div class="item row3 col1">Item 11: Some more text</div>
+    <div class="item row3 col2">Item 12:<br>One line<br>Another line<br>Last line</div>
+    <div class="item row3 col3">Item 13:<br>Two lines</div>
+    <div class="item row3 col4">Item 14:<br>VeryLoooongText</div>
+    <div class="item row3 col5">Item 15</div>
+
+    <div class="btn-group align-buttons">
+        <a class="btn btn-default" onclick="align('row1', 'start');"><i class="fa fa-align-left"></i></a>
+        <a class="btn btn-default" onclick="align('row1', 'center');"><i class="fa fa-align-center"></i></a>
+        <a class="btn btn-default" onclick="align('row1', 'end');"><i class="fa fa-align-right"></i></a>
+        <a class="btn btn-default" onclick="align('row1', 'stretch');"><i class="fa fa-align-justify"></i></a>
+    </div>
+
+    <div class="btn-group align-buttons">
+        <a class="btn btn-default" onclick="align('row2', 'start');"><i class="fa fa-align-left"></i></a>
+        <a class="btn btn-default" onclick="align('row2', 'center');"><i class="fa fa-align-center"></i></a>
+        <a class="btn btn-default" onclick="align('row2', 'end');"><i class="fa fa-align-right"></i></a>
+        <a class="btn btn-default" onclick="align('row2', 'stretch');"><i class="fa fa-align-justify"></i></a>
+    </div>
+
+    <div class="btn-group align-buttons">
+        <a class="btn btn-default" onclick="align('row3', 'start');"><i class="fa fa-align-left"></i></a>
+        <a class="btn btn-default" onclick="align('row3', 'center');"><i class="fa fa-align-center"></i></a>
+        <a class="btn btn-default" onclick="align('row3', 'end');"><i class="fa fa-align-right"></i></a>
+        <a class="btn btn-default" onclick="align('row3', 'stretch');"><i class="fa fa-align-justify"></i></a>
+    </div>
+
+    <div class="btn-group justify-buttons">
+        <a class="btn btn-default" onclick="justify('col1', 'start');"><i class="fa fa-align-left"></i></a>
+        <a class="btn btn-default" onclick="justify('col1', 'center');"><i class="fa fa-align-center"></i></a>
+        <a class="btn btn-default" onclick="justify('col1', 'end');"><i class="fa fa-align-right"></i></a>
+        <a class="btn btn-default" onclick="justify('col1', 'stretch');"><i class="fa fa-align-justify"></i></a>
+    </div>
+
+    <div class="btn-group justify-buttons">
+        <a class="btn btn-default" onclick="justify('col2', 'start');"><i class="fa fa-align-left"></i></a>
+        <a class="btn btn-default" onclick="justify('col2', 'center');"><i class="fa fa-align-center"></i></a>
+        <a class="btn btn-default" onclick="justify('col2', 'end');"><i class="fa fa-align-right"></i></a>
+        <a class="btn btn-default" onclick="justify('col2', 'stretch');"><i class="fa fa-align-justify"></i></a>
+    </div>
+
+    <div class="btn-group justify-buttons">
+        <a class="btn btn-default" onclick="justify('col3', 'start');"><i class="fa fa-align-left"></i></a>
+        <a class="btn btn-default" onclick="justify('col3', 'center');"><i class="fa fa-align-center"></i></a>
+        <a class="btn btn-default" onclick="justify('col3', 'end');"><i class="fa fa-align-right"></i></a>
+        <a class="btn btn-default" onclick="justify('col3', 'stretch');"><i class="fa fa-align-justify"></i></a>
+    </div>
+
+    <div class="btn-group justify-buttons">
+        <a class="btn btn-default" onclick="justify('col4', 'start');"><i class="fa fa-align-left"></i></a>
+        <a class="btn btn-default" onclick="justify('col4', 'center');"><i class="fa fa-align-center"></i></a>
+        <a class="btn btn-default" onclick="justify('col4', 'end');"><i class="fa fa-align-right"></i></a>
+        <a class="btn btn-default" onclick="justify('col4', 'stretch');"><i class="fa fa-align-justify"></i></a>
+    </div>
+
+    <div class="btn-group justify-buttons">
+        <a class="btn btn-default" onclick="justify('col5', 'start');"><i class="fa fa-align-left"></i></a>
+        <a class="btn btn-default" onclick="justify('col5', 'center');"><i class="fa fa-align-center"></i></a>
+        <a class="btn btn-default" onclick="justify('col5', 'end');"><i class="fa fa-align-right"></i></a>
+        <a class="btn btn-default" onclick="justify('col5', 'stretch');"><i class="fa fa-align-justify"></i></a>
+    </div>
+
+    <div class="empty"></div>
+
+</div>

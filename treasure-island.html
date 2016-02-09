@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grid Layout example</title>
+    <link href='https://fonts.googleapis.com/css?family=Tangerine|Calligraffitti|Oswald' rel='stylesheet' type='text/css'>
+    <style>
+        html, body, h1, h2, h3, h4 {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url("treasure-island-background.png");
+            background-repeat: repeat;
+
+            display: grid;
+
+            grid-template-columns: auto 1fr 25%;
+            grid-template-rows: auto auto auto auto 1fr auto;
+            grid-gap: 20px;
+
+            border: 10px solid rgba(0, 0, 0, 0);
+            box-sizing: border-box;
+
+            font-family: 'Calligraffitti', cursive;
+            font-size: 2em;
+
+            height: 100vh;
+        }
+
+        h1, h2, h3, h4 {
+            justify-self: center;
+            margin: 0;
+            padding: 10px;
+            border-radius: 10px;
+
+            font-family: 'Oswald', sans-serif;
+        }
+
+        h1 {
+            grid-column: 1 / span 3;
+            grid-row: 1;
+            background: #FAFADA;
+            opacity: 0.8;
+            padding: 10px 40px;
+        }
+
+        h2 {
+            background: cyan;
+            grid-column: 1 / span 3;
+            grid-row: 2;
+            background: #FAFADA;
+            opacity: 0.8;
+            padding: 5px 20px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            grid-column: 1 / span 2;
+            grid-row: 3;
+            background: #FAFADA;
+            opacity: 0.8;
+            padding: 2px 10px;
+        }
+
+        h4 {
+            background: #FAFADA;
+            opacity: 0.8;
+            padding: 1px 5px;
+            grid-column: 2;
+            grid-row: 4;
+        }
+
+        nav {
+            background: #3A3A0A;
+            opacity: 0.8;
+            color: white;
+            font-weight: bold;
+            grid-column: 1;
+            grid-row: 4 / span 2;
+            padding-left: 40px;
+            padding-right: 20px;
+            width: 300px;
+            font-size: 0.9em;
+        }
+
+        li:hover {
+            text-decoration: underline;
+        }
+
+        article {
+            grid-column: 2;
+            grid-row: 5;
+            overflow-y: auto;
+
+            background: #FAFADA;
+            opacity: 0.8;
+            border: 5px solid white;
+            padding: 0px 20px;
+            font-family: 'Tangerine', cursive;
+            font-size: 2em;
+        }
+
+        figure {
+            grid-column: 3;
+            grid-row: 3 / span 3;
+
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 1fr auto;
+            height: 90%;
+        }
+
+        img {
+            grid-row: 1;
+            width: 100%;
+            height: 100%;
+        }
+
+        figcaption {
+            grid-row: 2;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        footer {
+            grid-column: 1 / span 3;
+            grid-row: 6;
+            justify-self: end;
+
+            font-size: 0.7em;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        @media (max-width: 1500px) {
+            body {
+                font-size: 1.8em;
+
+                grid-template-columns: 1fr 1fr 25%;
+                grid-template-rows: auto auto 1fr auto;
+                grid-gap: 10px;
+            }
+
+            h1 {
+                grid-column: 1 / span 2;
+                grid-row: 1;
+                align-self: center;
+            }
+
+            h2 {
+                grid-column: 3;
+                grid-row: 1 / span 2;
+                align-self: center;
+            }
+
+            h3 {
+                grid-column: 1;
+                grid-row: 2;
+                justify-self: start;
+                align-self: center;
+            }
+
+            h4 {
+                grid-column: 2;
+                grid-row: 2;
+                align-self: center;
+            }
+
+            nav {
+                display: none;
+            }
+
+            article {
+                grid-column: 1 / span 2;
+                grid-row: 3;
+            }
+
+            figure {
+                grid-column: 3;
+                grid-row: 3;
+            }
+
+            footer {
+                grid-column: 1 / span 3;
+                grid-row: 4;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            body {
+                font-size: 1.4em;
+            }
+        }
+
+        @media (max-width: 900px) {
+            body {
+                font-size: 1.2em;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto 1fr auto;
+            }
+
+            h1 {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            h2 {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            h3 {
+                display: none;
+            }
+
+            h4 {
+                grid-column: 1 / span 2;
+                grid-row: 2;
+            }
+
+            figure {
+                display: none;
+            }
+
+            footer {
+                grid-column: 1 / span 2;
+                grid-row: 4;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <h1>Treasure Island</h1>
+    <h2>by Robert Louis Stevenson</h2>
+    <h3>PART I: The Old Buccaneer</h3>
+    <nav>
+        <ol type="I">
+            <li>At the "Admiral Benbow"</li>
+            <li>Black Dog Appears and Disappears</li>
+            <li>The Black Spot</li>
+            <li>The Sea-Chest</li>
+            <li>The Last of the Blind Man</li>
+            <li>The Captain's Papers</li>
+        </ol>
+    </nav>
+    <h4>CHAPTER I: At the "Admiral Benbow"</h4>
+    <article>
+        <p>Squire Trelawney, Doctor Livesey, and the rest of these gentlemen having asked me to write down the whole particulars about Treasure Island, from the beginning to the end, keeping nothing back but the bearings of the island, and that only because there is still treasure not yet lifted, I take up my pen in the year of grace 17—, and go back to the time when my father kept the "Admiral Benbow" Inn, and the brown old seaman, with the saber cut, first took up his lodging under our roof.</p>
+        <p>I remember him as if it were yesterday, as he came plodding to the inn door, his sea-chest following behind him in a hand-barrow; a tall, strong, heavy, nut-brown man; his tarry pig-tail falling over the shoulders of his soiled blue coat; his hands ragged and scarred, with black, broken nails, and the saber cut across one cheek, a dirty, livid white. I remember him looking round the cove and whistling to himself as he did so, and then breaking out in that old sea-song that he sang so often afterwards:</p>
+        <p>"Fifteen men on the dead man's chest, Yo-ho-ho and a bottle of rum!"</p>
+        <p>in the high, old tottering voice that seemed to have been tuned and broken at the capstan bars. Then he rapped on the door with a bit of stick like a handspike that he carried, and when my father appeared, called roughly for a glass of rum. This, when it was brought to him, he drank slowly, like a connoisseur, lingering on the taste, and still looking about him at the cliffs and up at our signboard.</p>
+        <p>"This is a handy cove," says he, at length; "and a pleasant sittyated grog-shop. Much company, mate?"</p>
+        <p>My father told him no, very little company, the more was the pity.</p>
+        <p>"Well, then," said he, "this is the berth for me. Here you, matey," he cried to the man who trundled the barrow; "bring up alongside and help up my chest. I'll stay here a bit," he continued. "I'm a plain man; rum and bacon and eggs is what I want, and that head up there for to watch ships off. What you mought call me? You mought call me captain. Oh, I see what you're at—there"; and he threw down three or four gold pieces on the threshold. "You can tell me when I've worked through that," said he, looking as fierce as a commander.</p>
+        <p>And, indeed, bad as his clothes were, and coarsely as he spoke, he had none of the appearance of a man who sailed before the mast, but seemed like a mate or skipper, accustomed to be obeyed or to strike. The man who came with the barrow told us the mail had set him down the morning before at the "Royal George"; that he had inquired what inns there were along the coast, and hearing ours well spoken of, I suppose, and described as lonely, had chosen it from the others for his place of residence. And that was all we could learn of our guest.</p>
+    </article>
+
+    <figure>
+        <img src="treasure-island-pirate.jpg" alt="Captain arriving to Admiral Benbow">
+        <figcaption>I remember him as if it were yesterday as he came plodding to the inn door</figcaption>
+    </figure>
+
+
+    <footer>Excerpts from "Treasure Island" by Robert Louis Stevenson. Full book available at <a href="http://www.gutenberg.org/ebooks/27780">Project Gutenburg</a>.</footer>
+
+</body>
+</html>

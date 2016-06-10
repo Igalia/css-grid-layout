@@ -5,13 +5,9 @@
     <style>
         .grid {
             background: none;
-            -webkit-grid-template-columns: [left] 200px [main-start] 100px [center] 100px 100px [main-end] 50px 50px [right];
             grid-template-columns: [left] 200px [main-start] 100px [center] 100px 100px [main-end] 50px 50px [right];
-            -webkit-grid-template-rows: [top title-start] 50px [title-end main-start] 200px [main-end center] 150px 100px [bottom];
             grid-template-rows: [top title-start] 50px [title-end main-start] 200px [main-end center] 150px 100px [bottom];
-            -webkit-grid-auto-columns: 50px;
             grid-auto-columns: 50px;
-            -webkit-grid-auto-rows: 50px;
             grid-auto-rows: 50px;
             font-family: monospace;
             font-weight: bold;
@@ -37,9 +33,7 @@
             height: 100%;
             box-sizing: border-box;
 
-            display: -webkit-grid;
             display: grid;
-            -webkit-grid: 100% / 100%;
             grid: 100% / 100%;
             justify-items: center;
             align-items: center;
@@ -49,9 +43,7 @@
             background: rgba(242,46,138, 0.8);
             border: 5px solid rgb(242,46,138);
 
-            -webkit-grid-column: -8;
             grid-column: -8;
-            -webkit-grid-row: -7;
             grid-row: -7;
         }
 
@@ -59,9 +51,7 @@
             background: rgba(98,205,217, 0.8);
             border: 5px solid rgb(98,205,217);
 
-            -webkit-grid-column: -1 / span 2;
             grid-column: -1 / span 2;
-            -webkit-grid-row: span 2 / 1;
             grid-row: span 2 / 1;
         }
 
@@ -69,9 +59,7 @@
             background: rgba(117,191,6, 0.8);
             border: 5px solid rgb(117,191,6);
 
-            -webkit-grid-column: span 2 / center;
             grid-column: span 2 / center;
-            -webkit-grid-row: auto / 1;
             grid-row: auto / 1;
         }
 
@@ -79,9 +67,7 @@
             background: rgba(242,226,5, 0.8);
             border: 5px solid rgb(242,226,5);
 
-            -webkit-grid-column: 1 / -1;
             grid-column: 1 / -1;
-            -webkit-grid-row: title;
             grid-row: title;
         }
 
@@ -89,7 +75,6 @@
             background: rgba(242,54,12, 0.8);
             border: 5px solid rgb(242,54,12);
 
-            -webkit-grid-area: main;
             grid-area: main;
         }
 
@@ -97,9 +82,7 @@
             background: rgba(166,0,62, 0.8);
             border: 5px solid rgb(166,0,62);
 
-            -webkit-grid-column: 5 / span right;
             grid-column: 5 / span right;
-            -webkit-grid-row: auto / center;
             grid-row: auto / center;
         }
 
@@ -107,9 +90,7 @@
             background: rgba(22,129,141, 0.8);
             border: 5px solid rgb(22,129,141);
 
-            -webkit-grid-column: span bar / 9;
             grid-column: span bar / 9;
-            -webkit-grid-row: center;
             grid-row: center;
         }
 
@@ -117,9 +98,7 @@
             background: rgba(41,115,0, 0.8);
             border: 5px solid rgb(41,115,0);
 
-            -webkit-grid-column: span 2 / 2;
             grid-column: span 2 / 2;
-            -webkit-grid-row: -2;
             grid-row: -2;
         }
 
@@ -127,9 +106,7 @@
             background: rgba(166,150,0, 0.8);
             border: 5px solid rgb(166,150,0);
 
-            -webkit-grid-column: center / right;
             grid-column: center / right;
-            -webkit-grid-row: 5 / 4;
             grid-row: 5 / 4;
         }
 
@@ -137,9 +114,7 @@
             background: rgba(166,0,0, 0.8);
             border: 5px solid rgb(166,0,0);
 
-            -webkit-grid-column: center;
             grid-column: center;
-            -webkit-grid-row: bottom / span bottom;
             grid-row: bottom / span bottom;
         }
 

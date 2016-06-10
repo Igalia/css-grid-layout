@@ -3,17 +3,7 @@
 <head>
     <style>
         .grid {
-            display: -webkit-grid;
             display: grid;
-            -webkit-grid-template: "a b c"
-                                   "d d d"
-                                   "e . .";
-            -webkit-grid-template-areas: "a b c"
-                                         "d d d"
-                                         "e . .";
-            grid-template: "a b c"
-                           "d d d"
-                           "e . .";
             grid-template-areas: "a b c"
                                  "d d d"
                                  "e . .";
@@ -26,31 +16,26 @@
         }
 
         #itema {
-            -webkit-grid-area: a;
             grid-area: a;
             background-color: #FCC;
         }
 
         #itemb {
-            -webkit-grid-area: b;
             grid-area: b;
             background-color: #CFC;
         }
 
         #itemc {
-            -webkit-grid-area: c;
             grid-area: c;
             background-color: #CCF;
         }
 
         #itemd {
-            -webkit-grid-area: d;
             grid-area: d;
             background-color: #FFC;
         }
 
         #iteme {
-            -webkit-grid-area: e;
             grid-area: e;
             background-color: #CFF;
         }

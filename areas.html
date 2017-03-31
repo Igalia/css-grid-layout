@@ -3,11 +3,22 @@
 <head>
     <link href="css/grid.css" rel="stylesheet">
     <style>
+        body {
+            margin: 0;
+        }
         .grid {
-            grid-template-areas: "a b b c"
-                                 "d b b c"
-                                 "e e e e";
-            width: 150px;
+            grid-template-columns: repeat(3, 1fr) repeat(2, 2fr);
+            grid-template-rows: repeat(5, 1fr);
+            grid-template-areas: "a b b . ."
+                                 ". b b . c"
+                                 "d b b . c"
+                                 "d . . . c"
+                                 "e e e e e";
+            color: #444;
+            font-family: sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            height: 100vh;
         }
 
         .grid div {
@@ -34,15 +45,24 @@
         #item5 {
             grid-area: e;
         }
+        #item1,
+        #item2,
+        #item3,
+        #item4,
+        #item5 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
     <div class="grid">
       <div id="item1">area a</div>
-      <div id="item2">area b<br>area b<br>area b</div>
-      <div id="item3">area c area c area c</div>
-      <div id="item4">area d area d</div>
-      <div id="item5">area e area e area e</div>
+      <div id="item2">area b</div>
+      <div id="item3">area c</div>
+      <div id="item4">area d</div>
+      <div id="item5">area e</div>
     </div>
 </body>
 </html>
